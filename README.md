@@ -19,9 +19,9 @@ The system delivers following features:
 - measurement of `outdoor` parameters like temeprature, humidity, pressure, air pollution (PM1, PM2.5, PM10):
 <img src="./docs/GrafanaOutdoorGeneral.png" width="700">
 
-    Example of SQL query in Grafana:
+Example of SQL query in Grafana:
 
-    <img src="./docs/GrafanaOutdoorSqlQuery.png" width="700">
+<img src="./docs/GrafanaOutdoorSqlQuery.png" width="700">
 
 <br>
 
