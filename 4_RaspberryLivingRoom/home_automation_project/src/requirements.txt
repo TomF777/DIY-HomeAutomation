@@ -1,0 +1,4 @@
+Adafruit-DHT==1.4.0
+Adafruit-PlatformDetect==3.66.0
+adafruit-python-shell==1.8.1
+paho-mqtt==2.1.0

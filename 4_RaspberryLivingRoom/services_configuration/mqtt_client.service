@@ -1,0 +1,19 @@
+[Unit]
+
+Description=Service script for automatic start of mqtt_publisher.py
+After=network-online.target
+Wants=network-online.target
+
+#After=multi-user.target
+
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python /home/pi/home_automation_project/src/mqtt_publisher.py 1>/dev/null
+Restart=on-failure
+StandardOutput=null
+StandardError=journal
+
+
+[Install]
+WantedBy=multi-user.target
