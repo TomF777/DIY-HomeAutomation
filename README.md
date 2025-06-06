@@ -11,7 +11,6 @@ The system implements variety of communication protocols like: `MQTT`, `I2C`, `1
 ## System Diagram
 ![System Diagram](./00_docs/BlockDiagram.png)
 
-<img src="./00_docs/BlockDiagram.png" width="2000">
 
 Most of the software is written in Python.
 
