@@ -31,8 +31,8 @@ GPIO.setup(PMS3003_RESET_GPIO_PIN, GPIO.OUT)
 # mqtt settings
 BROKER_HOST = "192.168.1.165"
 BROKER_PORT = 1883
-BROKER_USERNAME = 'mqttbroker'
-BROKER_PASSWORD = 'IoT@2023'
+BROKER_USERNAME = '***'
+BROKER_PASSWORD = '***'
 
 
 # settings for sensor type: DHT22
