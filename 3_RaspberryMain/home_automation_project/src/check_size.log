@@ -1,0 +1,1712 @@
+/dev/root 15G 12G 1.7G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	2
+generic_current_integral	2
+room_kitchen_zigbee	1
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 1 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 1.5G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 13G 1.4G 90% /
+Disk usage 90% 
+90
+BIG SIZE DISK SPACE USED
+Starting Clean Up process ...
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+generic_current_integral	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+rm: cannot remove './journal': No such file or directory
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 2.3G 84% /
+Disk usage 84% 
+84
+there is enough disk space
+Table	Size (MB)
+room_bedroom	5
+room_kitchen	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	4
+room_bathroom	4
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 2.2G 84% /
+Disk usage 84% 
+84
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+generic_current_integral	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 2.1G 85% /
+Disk usage 85% 
+85
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_bathroom	4
+generic_outside_conditions	4
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 2.1G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_bathroom	4
+generic_outside_conditions	4
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 1.9G 87% /
+Disk usage 87% 
+87
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+generic_current_integral	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 1.8G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+room_bedroom	5
+room_kitchen	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	4
+room_bathroom	4
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 1.7G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+generic_current_integral	2
+room_living	0
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 0 MB
+******************************************************************
+/dev/root 15G 12G 1.5G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.2G 84% /
+Disk usage 84% 
+84
+there is enough disk space
+Table	Size (MB)
+room_bedroom	5
+room_kitchen	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	4
+room_bathroom	4
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.0G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_living	2
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.9G 87% /
+Disk usage 87% 
+87
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.8G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_kitchen_zigbee	2
+room_bathroom_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 2 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.6G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_kitchen	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 13G 1.5G 90% /
+Disk usage 90% 
+90
+BIG SIZE DISK SPACE USED
+Starting Clean Up process ...
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_living	2
+generic_current_integral	2
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+rm: cannot remove './journal': No such file or directory
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.5G 83% /
+Disk usage 83% 
+83
+there is enough disk space
+Table	Size (MB)
+room_bedroom	5
+room_kitchen	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.2G 84% /
+Disk usage 84% 
+84
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_living	2
+generic_current_integral	2
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.1G 85% /
+Disk usage 85% 
+85
+there is enough disk space
+Table	Size (MB)
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_kitchen	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.0G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_living	2
+generic_current_integral	2
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.9G 87% /
+Disk usage 87% 
+87
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_bathroom	4
+generic_outside_conditions	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.8G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+room_bedroom	5
+room_kitchen	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.7G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_kitchen	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.6G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_bathroom	4
+generic_outside_conditions	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.1G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+Table	Size (MB)
+room_bedroom	5
+room_kitchen	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.7G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_kitchen_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.6G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_kitchen_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 13G 1.5G 90% /
+Disk usage 90% 
+90
+BIG SIZE DISK SPACE USED
+Starting Clean Up process ...
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_kitchen_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+rm: cannot remove './journal': No such file or directory
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 11G 2.6G 81% /
+Disk usage 81% 
+81
+there is enough disk space
+Table	Size (MB)
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_kitchen	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.5G 82% /
+Disk usage 82% 
+82
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_kitchen_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.4G 83% /
+Disk usage 83% 
+83
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_bathroom	4
+generic_outside_conditions	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.2G 84% /
+Disk usage 84% 
+84
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_kitchen_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.1G 85% /
+Disk usage 85% 
+85
+there is enough disk space
+Table	Size (MB)
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_kitchen	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 2.0G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+Table	Size (MB)
+room_kitchen	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+room_kitchen_zigbee	2
+room_living	2
+generic_current_integral	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.9G 87% /
+Disk usage 87% 
+87
+there is enough disk space
+Table	Size (MB)
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_kitchen	5
+generic_outside_conditions	4
+room_bathroom	4
+room_bathroom_zigbee	3
+generic_current_integral	2
+room_kitchen_zigbee	2
+room_living	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 4 MB
+******************************************************************
+Table: generic_outside_conditions size: 4 MB
+******************************************************************
+Table: generic_current_integral size: 2 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 3 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.7G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bedroom	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	2
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 5 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 12G 1.6G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	2
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 2 MB
+******************************************************************
+/dev/root 15G 13G 1.5G 90% /
+Disk usage 90% 
+90
+BIG SIZE DISK SPACE USED
+Starting Clean Up process ...
+Table	Size (MB)
+room_bedroom	6
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+rm: cannot remove './journal': No such file or directory
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+rm: cannot remove './cli': No such file or directory
+Table: room_living size: 3 MB
+******************************************************************
+rm: cannot remove './.cli*': No such file or directory
+rm: cannot remove './code*': No such file or directory
+rm: cannot remove './data': No such file or directory
+/dev/root 15G 12G 2.0G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_particulate_matter	5
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 1.9G 87% /
+Disk usage 87% 
+87
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 1.8G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bathroom_zigbee	4
+room_living	3
+generic_current_integral	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 13G 1.4G 90% /
+Disk usage 90% 
+90
+BIG SIZE DISK SPACE USED
+Starting Clean Up process ...
+rm: cannot remove './journal': No such file or directory
+Table	Size (MB)
+room_bedroom	6
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+generic_outside_conditions	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 1.9G 87% /
+Disk usage 87% 
+87
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bathroom_zigbee	4
+room_living	3
+generic_current_integral	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 1.7G 88% /
+Disk usage 88% 
+88
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 1.6G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 1.6G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_particulate_matter	5
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 13G 1.4G 91% /
+Disk usage 91% 
+91
+BIG SIZE DISK SPACE USED
+Starting Clean Up process ...
+rm: cannot remove './journal': No such file or directory
+Table	Size (MB)
+room_bedroom	6
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bathroom_zigbee	4
+generic_current_integral	3
+room_living	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 2.0G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+Table	Size (MB)
+room_bedroom	6
+generic_outside_conditions	5
+room_kitchen	5
+room_bathroom	5
+generic_outside_particulate_matter	5
+room_bathroom_zigbee	4
+room_living	3
+generic_current_integral	3
+room_kitchen_zigbee	2
+test_table	0
+-------------------------------------------------------------------------
+Table: room_kitchen size: 5 MB
+******************************************************************
+Table: generic_outside_particulate_matter size: 5 MB
+******************************************************************
+Table: room_bedroom size: 6 MB
+******************************************************************
+Table: room_bathroom size: 5 MB
+******************************************************************
+Table: generic_outside_conditions size: 5 MB
+******************************************************************
+Table: generic_current_integral size: 3 MB
+******************************************************************
+Table: room_bathroom_zigbee size: 4 MB
+******************************************************************
+Table: room_kitchen_zigbee size: 2 MB
+******************************************************************
+Table: room_living size: 3 MB
+******************************************************************
+/dev/root 15G 12G 2.3G 84% /
+Disk usage 84% 
+84
+there is enough disk space
+/dev/root 15G 12G 1.9G 86% /
+Disk usage 86% 
+86
+there is enough disk space
+/dev/root 15G 12G 2.1G 85% /
+Disk usage 85% 
+85
+there is enough disk space
+/dev/root 15G 12G 1.9G 87% /
+Disk usage 87% 
+87
+there is enough disk space
+/dev/root 15G 12G 1.6G 89% /
+Disk usage 89% 
+89
+there is enough disk space
+/dev/root 15G 13G 1.4G 90% /
+Disk usage 90% 
+90
+BIG SIZE DISK SPACE USED
+Starting Clean Up process ...
+rm: cannot remove './journal': No such file or directory
+rm: cannot remove './syslog.*': No such file or directory
+rm: cannot remove './user.log.*': No such file or directory
+rm: cannot remove './messages.*': No such file or directory
+rm: cannot remove './daemon.log.*': No such file or directory

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+   <head>
+      <title>Home Automation </title>
+      <link rel="stylesheet" href='../static/style.css'/>
+
+	  <style>
+		body {
+			text-align: center;
+		}
+		#g1,
+		#g2 {
+			width: 200px;
+			height: 160px;
+			display: inline-block;
+			margin: 1em;
+		}
+	   </style>
+
+   </head>
+   <body>
+	<h1>Home Automation System</h1>
+	<div id="g1"></div>
+    <div id="g2"></div>
+	
+	<h3> TEMPERATURE   ==>  {{ temperature  }} oC</h3>
+	<h3> HUMIDITY (Rel.) ==>  {{ humidity  }} %</h3>
+	<h3> variable 1 ==>  {{ var1  }} </h3>
+	<h3> variable 1 ==>  {{ test2  }} </h3>
+	<hr>
+	<h3> Last Sensors Reading: {{ time }} ==> <a href="/"class="button">REFRESH</a></h3>	
+	<hr>
+	<p> @2018 Developed by MJRoBot.org</p>
+
+	<h3> HISTORICAL DATA </h3>
+	<p> Enter number of samples to retrieve:
+	<form   action="/" method="POST">
+		<input name="numSamples">
+		<input type="submit">
+	</form></p>
+
+	<h1>Actuators</h1>
+	<h2> Status </h2>
+	<h3> btn1 ==>  {{ btn1_sts  }}</h3>
+	<h3> btn2 ==>  {{ btn2_sts  }}</h3>
+	<br>
+	<h2> Commands </h2>
+
+
+    <form method="post" action="/">
+        <input type="submit" value="VALUE1" name="action1"/>
+        <input type="submit" value="VALUE2" name="action2" />
+		<input type="submit" value="VALUE3" name="action3" />
+    </form>
+
+
+	<h3> 
+		Button Ctrl ==> 
+		<input type="submit" href="/btn1/on" class="button">TURN ON</a>  
+		<a href="/btn1/off"class="button">TURN OFF</a>
+	</h3>
+	<h3> 
+		Button Ctrl ==> 
+		<a href="/btn2/on" class="button">TURN ON</a>  
+		<a href="/btn2/off"class="button">TURN OFF</a>
+	</h3>
+
+	<hr>
+		<img src="/plot/temp" alt="Image Placeholder" width="49%">
+		<img src="/plot/hum" alt="Image Placeholder" width="49%">
+
+	<script src="../static/raphael-2.1.4.min.js"></script>
+    <script src="../static/justgage.js"></script>
+
+    <script>
+	var g1, g2;
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    g1 = new JustGage({
+		id: "g1",
+		value: {{temperature}},
+		valueFontColor: "yellow",
+		min: -10,
+		max: 50,
+		title: "Temperature",
+		label: "Celcius",
+		humanFriendlyDecimal: 2,
+		decimals: 1
+	});
+	    g2 = new JustGage({
+		id: "g2",
+		value: {{humidity}},
+		valueFontColor: "yellow",
+		min: 0,
+		max: 100,
+		title: "Humidity",
+		label: "%",
+		humanFriendlyDecimal: 2
+
+	});
+      });
+    </script>
+	
+
+   </body>
+</html>

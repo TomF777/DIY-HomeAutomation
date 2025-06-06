@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./static/css/menu_buttons.css">
+    
+    <title>Electrical Data</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script type="text/javascript"  >
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawGauge);
+
+
+      function drawChart() {
+
+        // line chart for electrical current integral  - phases L1, L2, L3
+        var data1_1 = google.visualization.arrayToDataTable({{histDataElecIntegral|safe}});
+        var options1_1 = {
+          title: '',
+          explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+          hAxis: { title: '---', viewWindowMode: 'maximized'  },
+          vAxis: { title: 'As', maxValue:1000},
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart1_1 = new google.visualization.LineChart(document.getElementById('chart_elec_integral'));
+        chart1_1.draw(data1_1, options1_1);
+
+      }
+
+      function drawGauge() {
+		
+       data2_1 = google.visualization.arrayToDataTable([
+         ['Label', 'Value'],
+         ['As', {{elec_integral_l1}}],
+       ]);
+       
+       options2_1 = {
+         width: 300, height: 150,
+         max:100, min:0,
+         animation:{duration: 400},
+         greenColor:'#08E3E8',
+         redFrom:80, redTo:100,
+         yellowFrom:50, yellowTo:80,
+         greenFrom:0, greenTo:50,
+         minorTicks: 5,
+         majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+       };
+       
+       chart2_1 = new google.visualization.Gauge(document.getElementById('gauge2_1'));
+       chart2_1.draw(data2_1, options2_1);
+
+       //---------------------------------------------------------------------------------
+
+       data2_2 = google.visualization.arrayToDataTable([
+       ['Label', 'Value'],
+       ['As', {{elec_integral_l2}}],
+     ]);
+     
+     options2_2 = {
+       width: 300, height: 150,
+       max:100, min:0,
+       animation:{duration: 400},
+       greenColor:'#08E3E8',
+       redFrom:80, redTo:100,
+       yellowFrom:50, yellowTo:80,
+       greenFrom:0, greenTo:50,
+       minorTicks: 5,
+       majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+     };
+     
+     chart2_2 = new google.visualization.Gauge(document.getElementById('gauge2_2'));
+     chart2_2.draw(data2_2, options2_2);
+
+
+    //---------------------------------------------------------------------------------
+
+    data2_3 = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['As', {{elec_integral_l3}}],
+    ]);
+  
+    options2_3 = {
+        width: 300, height: 150,
+        max:100, min:0,
+        animation:{duration: 400},
+        greenColor:'#08E3E8',
+        redFrom:80, redTo:100,
+        yellowFrom:50, yellowTo:80,
+        greenFrom:0, greenTo:50,
+        minorTicks: 5,
+        majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+    };
+  
+    chart2_3 = new google.visualization.Gauge(document.getElementById('gauge2_3'));
+    chart2_3.draw(data2_3, options2_3);
+
+    }
+
+    </script>
+</head>
+
+
+<body>
+
+    <a href="/main" class="menu_btn">Outside Data</a>
+    <a href="/rooms" class="menu_btn">Rooms</a>
+    <a href="/electrical" class="menu_btn">Electrical</a>
+    <a href="/system_status" class="menu_btn">System Status</a>
+    <a href="/camera" class="menu_btn">Camera</a>
+
+    <h1 style="font-family: courier;" align="center">HOME Automation System</h1>
+
+    <h1 style="font-family: courier;" align="center"> Electrical current integral</h1>
+
+    <div style="position:relative; left:60px; top:20px"> 
+        <p  style="position:relative;width:350px; left:5px; font-family:courier" >Phase L1</p> 
+        <div id="gauge2_1" style="width: 100px; height: 50px"></div>
+    </div>
+
+    <div style="position:relative; left:260px; top:-80px"> 
+        <p  style="position:relative;width:350px; left:5px; font-family:courier" >Phase L2</p> 
+        <div id="gauge2_2" style="width: 100px; height: 50px"></div>
+    </div>
+
+    <div style="position:relative; left:460px; top:-180px"> 
+        <p  style="position:relative;width:350px; left:5px; font-family:courier" >Phase L3</p> 
+        <div id="gauge2_3" style="width: 100px; height: 50px"></div>
+    </div>
+
+    <div style="position:relative; left:660px; top: -200px; font-family:courier">
+    <p> Number of samples to retrieve:
+      <form method="POST">
+        <input name="numbersamples">
+        <input type="submit">
+      </form></p>
+    </div>
+
+    <div style="position:relative; left:-20px; top:-170px">
+      <div id="chart_elec_integral" style="width: 1200px; height: 500px"></div>
+    </div>
+
+
+
+</body>
+</html>

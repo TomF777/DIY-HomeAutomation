@@ -1,0 +1,20 @@
+[Unit]
+
+Description=Service script for automatic start of zigbee_handler.py
+After=network-online.target
+Wants=mqtt_subscriber.service
+
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+
+ExecStart=/usr/local/bin/python3.10 /home/pi/home_automation_project/src/zigbee_handler.py 1>/dev/null
+
+#Restart=on-failure
+StandardOutput=null
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

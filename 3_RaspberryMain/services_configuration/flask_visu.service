@@ -1,0 +1,23 @@
+[Unit]
+
+Description=Service script for automatic start of Flask app.py
+After=network-online.target
+Wants=mqtt_subscriber.service
+
+After=multi-user.target
+
+
+[Service]
+User=pi
+Type=simple 
+
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/local/bin/python3.10  /home/pi/home_automation_project/src/flask_visu/app.py 1>/dev/null
+
+#Restart=on-failure
+StandardOutput=null
+StandardError=journal
+
+
+[Install]
+WantedBy=multi-user.target

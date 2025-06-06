@@ -1,0 +1,5 @@
+Flask==3.1.1
+Flask_Cors==5.0.0
+flask_csp==0.10
+MySQL-python==1.2.5
+shared_memory_dict==0.7.2

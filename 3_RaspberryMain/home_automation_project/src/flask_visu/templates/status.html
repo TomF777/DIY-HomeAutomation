@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> System status </title>
+        <meta content="3"  http-equiv="refresh">
+        <link rel="stylesheet" href="./static/css/led_lights.css">
+        <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./static/css/menu_buttons.css">
+
+        <style>
+
+            {
+                box-sizing: border-box;
+            }
+
+            /* Set additional styling options for the columns */
+            .column {
+            float: left;
+            width: 33%;
+            padding: 1px;
+            height: 800px; 
+            }
+    
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+
+            .inline-block-child {
+                display: inline-block;
+              }
+
+
+           </style>
+
+    </head>
+
+    <body>
+
+    <a href="/main" class="menu_btn">Outside Data</a>
+    <a href="/rooms" class="menu_btn">Rooms</a>
+    <a href="/electrical" class="menu_btn">Electrical</a>
+    <a href="/system_status" class="menu_btn">System Status</a>
+    <a href="/camera" class="menu_btn">Camera</a>
+
+    <h1 style="font-family: courier;" align="center">HOME Automation System</h1>
+
+    <h1 style="font-family: courier;" align="center"> System Status</h1>
+
+    <!-- <div style="margin:auto; width: 20%;"> -->
+
+    <div class="row" align="center">
+        <div class="column" style="background-color:#b8f79d;">
+
+            <div class='parent' style="padding-bottom: 10px;" align="middle">
+
+                <div class="child inline-block-child" align="left">
+
+                    <img src="{{url_for('static', filename='RPi_3B_Plus.png')}}" align="middle" width="200px" height="auto" />
+                    <div id="led1" class="led-green"  ></div>
+                    <p style="position:relative; left: 5px; top:0px; font-family:courier">RPi 3B+ : Main Unit &nbsp &nbsp</p>
+                </div>
+
+                <div class="child inline-block-child" align="left" >
+                    <div class="child inline-block-child" align="left" >
+                        <p> ... </p>
+
+                    </div>
+                    <div class="child inline-block-child" align="left" >
+                        <p style="font-family:courier; font-size: 12px">&nbsp mqtt_publisher service status: 
+                                <b style="font-family:courier; font-size: 20px">
+                                    {% if mqtt_publisher_service == "OK" %}
+                                    <a style="color:lime;" > OK </a>
+                                    {% else %}
+                                    <a style="color:red;"  > NOK </a>
+                                    {% endif %}
+                                </b> 
+                        </p>
+
+                        <p style="font-family:courier; font-size: 12px">&nbsp mqtt_subscriber service status:
+                            <b style="font-family:courier; font-size: 20px">
+                                {% if mqtt_subscriber_service == "OK" %}
+                                <a style="color:lime;" > OK </a>
+                                {% else %}
+                                <a style="color:red;"  > NOK </a>
+                                {% endif %}
+                            </b> 
+                        </p>
+
+                        <p style="font-family:courier; font-size: 12px">&nbsp mosquitto service status:
+                            <b style="font-family:courier; font-size: 20px">
+                                {% if mosquitto_service == "OK" %}
+                                <a style="color:lime;" > OK </a>
+                                {% else %}
+                                <a style="color:red;"  > NOK </a>
+                                {% endif %}
+                            </b>  
+                        </p>
+
+                        <p style="font-family:courier; font-size: 12px">&nbsp MySQL Service status:
+                            <b style="font-family:courier; font-size: 20px">
+                                {% if mysql_service == "OK" %}
+                                <a style="color:lime;" > OK </a>
+                                {% else %}
+                                <a style="color:red;"  > NOK </a>
+                                {% endif %}
+                            </b>  
+                        </p>
+
+                        <p style="font-family:courier; font-size: 12px">&nbsp Grafana Service status:
+                            <b style="font-family:courier; font-size: 20px">
+                                {% if grafana_service == "OK" %}
+                                <a style="color:lime;" > OK </a>
+                                {% else %}
+                                <a style="color:red;"  > NOK </a>
+                                {% endif %}
+                            </b> 
+                        </p>
+
+                        <p style="font-family:courier; font-size: 12px">&nbsp Alarm Handler Service status:
+                            <b style="font-family:courier; font-size: 20px">
+                                {% if alarm_handler_service == "OK" %}
+                                <a style="color:lime;" > OK </a>
+                                {% else %}
+                                <a style="color:red;"  > NOK </a>
+                                {% endif %}
+                            </b> 
+                        </p>
+
+
+                        <p style="font-family:courier; font-size: 12px">&nbsp Service status SPARE</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class='parent' style="padding-top: 50px;" align="left">
+                <div class="child inline-block-child" align="left" style="font-family:courier; font-size: 10px" >IoT2024 &nbsp &nbsp</div>
+                <div align="left" class="child inline-block-child"> 
+                    <p style="font-family:courier; font-size: 17px"> RS485 Communication Status:</p>
+ 
+                </div>
+            </div>
+
+            <div class='parent' style="padding-top: 10px;" align="left">
+                <div class="child inline-block-child" align="left" > <img src="{{url_for('static', filename='RP2040-zero_no_bgd.png')}}" align="left" width="80px" height="auto" /> </div>
+                <div class="child inline-block-child" align="left"> 
+                    <div>
+                        {% if kitchen_conn_ok == True %}
+                        <div id="led1" class="led-green"  ></div>
+                        {% else %}
+                            <div id="led1" class="led-red"  ></div>
+                        {% endif %}
+                    </div> 
+                        <p style="font-family:courier; font-size: 14px">RP2040-Zero: &nbsp &nbsp </p>
+                        <p style="font-family:courier; font-size: 14px">Kitchen </p>
+
+                </div>
+
+                <div class="child inline-block-child" align="right" > <img src="{{url_for('static', filename='RP2040-zero_no_bgd.png')}}" align="left" width="80px" height="auto" /> </div>
+                <div class="child inline-block-child" align="left" > 
+                    <div>
+                        {% if el_switchboard_conn_ok == True %}
+                        <div id="led1" class="led-green"  ></div>
+                        {% else %}
+                            <div id="led1" class="led-red"  ></div>
+                        {% endif %}
+                    </div> 
+
+                    <p style="font-family:courier; font-size: 14px">RP2040-Zero: </p>
+                    <p style="font-family:courier; font-size: 14px">El.Switchboard </p>
+                </div>
+
+
+                <div class="child inline-block-child" align="right" > <img src="{{url_for('static', filename='RP2040-zero_no_bgd.png')}}" align="left" width="80px" height="auto" /> </div>
+                <div class="child inline-block-child" align="left" > 
+                    <div>
+                        {% if bathroom_conn_ok == True %}
+                        <div id="led1" class="led-green"  ></div>
+                        {% else %}
+                            <div id="led1" class="led-red"  ></div>
+                        {% endif %}
+                    </div> 
+
+                    <p style="font-family:courier; font-size: 14px">RP2040-Zero: </p>
+                    <p style="font-family:courier; font-size: 14px">Bathroom </p>
+                </div>
+
+            </div>
+
+
+            <div class='parent' style="padding-top: 10px;" align="left">
+                <div class="child inline-block-child" align="left" style="font-family:courier; font-size: 10px" >IoT2024 &nbsp &nbsp</div>
+                <div align="left" class="child inline-block-child"> 
+                    <p style="font-family:courier; font-size: 14px">_________________________________________________________________</p>
+ 
+                </div>
+            </div>
+
+
+            <div class='parent' style="padding-top: 10px;" align="left">
+                <div class="child inline-block-child" align="left" > <img src="{{url_for('static', filename='RP2040-zero_no_bgd.png')}}" align="left" width="80px" height="auto" /> </div>
+                <div align="left" class="child inline-block-child"> 
+
+                    {% if kitchen_light_switch_conn_ok == True %}
+                        <div id="led1" class="led-green"  ></div>
+                    {% else %}
+                        <div id="led1" class="led-red"  ></div>
+                    {% endif %}
+
+                    <p style="font-family:courier; font-size: 14px">RP2040-Zero: &nbsp &nbsp </p>
+                    <p style="font-family:courier; font-size: 14px">Light Switch </p>
+                    <p style="font-family:courier; font-size: 14px">Kitchen </p>
+                </div>
+
+                <div class="child inline-block-child" align="right" > 
+                    <img src="{{url_for('static', filename='RP2040-zero_no_bgd.png')}}" align="left" width="80px" height="auto" /> 
+                </div>
+
+                <div class="child inline-block-child" align="left" > 
+
+                        {% if living_light_switch_conn_ok == True %}
+                            <div id="led1" class="led-green"  ></div>
+                        {% else %}
+                            <div id="led1" class="led-red"  ></div>
+                        {% endif %}
+                     
+
+                    <p style="font-family:courier; font-size: 14px">RP2040-Zero: &nbsp</p>
+                    <p style="font-family:courier; font-size: 14px">Light Switch</p>
+                    <p style="font-family:courier; font-size: 14px">Living Room </p>
+                </div>
+
+                <div class="child inline-block-child" align="right" > 
+                    <img src="{{url_for('static', filename='RP2040-zero_no_bgd.png')}}" align="left" width="80px" height="auto" /> 
+                </div>
+
+                <div class="child inline-block-child" align="left" > 
+
+                        {% if bedroom_light_switch_conn_ok == True %}
+                            <div id="led1" class="led-green"  ></div>
+                        {% else %}
+                            <div id="led1" class="led-red"  ></div>
+                        {% endif %}
+                    
+                    <p style="font-family:courier; font-size: 14px">RP2040-Zero: </p>
+                    <p style="font-family:courier; font-size: 14px">Light Switch</p>
+                    <p style="font-family:courier; font-size: 14px">Bed Room </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="column" style="background-color:#b8f79d;">
+
+            <div >
+                <img src="{{url_for('static', filename='RPi_Plus.png')}}" align="middle" width="200px" height="auto" />
+    
+                {% if living_room_conn_ok == True %}
+                    <div id="led1" class="led-green"  ></div>
+                {% else %}
+                    <div id="led1" class="led-red"  ></div>
+                {% endif %}
+                <p style="position:relative; left: 5px; top: 0px; font-family:courier">RPi +:  Living room</p>
+            </div>
+
+            
+        </div>
+
+        <div class="column" style="background-color:#b8f79d;">
+
+            <div>
+                <img src="{{url_for('static', filename='NanoPi_NEO-1.jpg')}}" align="middle" width="200px" height="auto" />
+                {% if bed_room_conn_ok == True %}
+                    <div id="led2" class="led-green"  ></div>
+                {% else %}
+                    <div id="led2" class="led-red"  ></div>
+                {% endif %}
+                <p style="position:relative; left: 5px; top:0px; font-family:courier">NanoPi Neo: Bed room</p>
+            </div>
+
+            
+        </div>
+    </div>
+
+        <!-- <h3> living room conn. OK ==>  {{ living_room_conn_ok  }} </h3>
+        <h3> bed room conn. OK ==>  {{ bed_room_conn_ok  }} </h3>  -->
+
+    </div>
+
+    </body>
+</html>

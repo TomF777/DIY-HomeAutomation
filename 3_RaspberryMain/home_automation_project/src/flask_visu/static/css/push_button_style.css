@@ -1,0 +1,12 @@
+#dlbutton{
+    background:#223445;
+    color:#FFFFFF ;
+    border: 1px solid #223445;
+    border-radius: 18px; 
+    -moz-border-radius: 15px; 
+    display:inline-block;
+    width: 20em;
+    height: 5em;
+    -webkit-font-smoothing: antialiased;
+	-webkit-border-radius: 15px;
+}

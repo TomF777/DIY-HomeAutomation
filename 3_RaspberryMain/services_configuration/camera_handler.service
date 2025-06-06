@@ -1,0 +1,23 @@
+[Unit]
+
+Description=Service script for automatic start of Picamera app for web stream and motion detection
+After=network-online.target
+Wants=mqtt_subscriber.service
+
+After=multi-user.target
+
+
+[Service]
+User=pi
+Type=simple 
+
+ExecStartPre=/bin/sleep 10
+ExecStart=python3  /home/pi/home_automation_project/src/picamera_motion/picamera_motion_stream.py 1>/dev/null
+
+#Restart=on-failure
+StandardOutput=null
+StandardError=journal
+
+
+[Install]
+WantedBy=multi-user.target

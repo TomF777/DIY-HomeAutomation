@@ -1,0 +1,474 @@
+"""
+The purpose of this program is to activate
+the camera motion detection in corridor
+and sound signalling of motion in rooms
+
+As soon as objects are detected by 'Picamera2' 
+the recorded images and videos are compressed (zip) and sent by email
+
+
+left push btn (GPIO22 - activate/deactivate alarm & sound notification
+right push btn (GPIO23) - activate/deactivate camera monitoring
+main door status (GPIO27) - normally status TRUE,
+If alarm activated and door opened - generate sound alarm
+"""
+import subprocess
+import time
+import os
+from queue import Queue
+from threading import Thread
+import json
+import logging
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
+import smtplib
+import paho.mqtt.client as mqtt
+import RPi.GPIO as GPIO
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+from pydub.playback import play
+from pydub import AudioSegment
+from aux_modules import Timer
+
+
+
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+
+## DI config
+BTN_ACTIVATE_ALARM_GPIO_PIN = 22
+BTN_ACTIVATE_MOTION_DETECT_GPIO_PIN = 23
+DOOR_OPENED_GPIO_PIN = 27
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(BTN_ACTIVATE_MOTION_DETECT_GPIO_PIN, GPIO.IN)
+GPIO.setup(BTN_ACTIVATE_ALARM_GPIO_PIN, GPIO.IN)
+GPIO.setup(DOOR_OPENED_GPIO_PIN, GPIO.IN)
+
+GPIO.add_event_detect(BTN_ACTIVATE_ALARM_GPIO_PIN, GPIO.RISING)
+GPIO.add_event_detect(BTN_ACTIVATE_MOTION_DETECT_GPIO_PIN, GPIO.RISING)
+
+# mqtt broker settings
+BROKER_HOST = "192.168.1.165"
+BROKER_PORT = 1883
+BROKER_USERNAME = '***'
+BROKER_PASSWORD = '***'
+
+MUSIC_BOX_FOLDER = "/home/pi/gpio-music-box/samples/"
+SIREN1 = AudioSegment.from_file(MUSIC_BOX_FOLDER + "siren1.wav", format="wav")
+SIREN2 = AudioSegment.from_file(MUSIC_BOX_FOLDER + "siren2.wav", format="wav")
+
+SOUND_CAMERA_ENABLED = AudioSegment.from_file(MUSIC_BOX_FOLDER + \
+                                              "motion_activated.wav",
+                                              format="wav")
+SOUND_CAMERA_DISABLED = AudioSegment.from_file(MUSIC_BOX_FOLDER + \
+                                               "motion_disabled.wav",
+                                               format="wav")
+SOUND_ALARM_ENABLED = AudioSegment.from_file(MUSIC_BOX_FOLDER + \
+                                            "sounds_activated.wav",
+                                             format="wav")
+SOUND_ALARM_DISABLED = AudioSegment.from_file(MUSIC_BOX_FOLDER +\
+                                              "sounds_deactivated.wav",
+                                              format="wav")
+SOUND_SYSTEM_SHUTDOWN = AudioSegment.from_mp3(MUSIC_BOX_FOLDER +\
+                                             "system_shutdown.mp3")
+
+
+
+class FileHandler(FileSystemEventHandler):
+    """
+        Execute action when new files occure 
+        in folder `home/pi/home_automation_project/src/picamera_motion/motion_videos/`
+    """
+
+    file_counter = 0
+
+    def __init__(self, zip_folder, mqtt_queue):
+        self.zip_folder = zip_folder
+        self.mqtt_queue = mqtt_queue
+
+    def send_email(self):
+        """
+        Send email when new files occured in given directory
+        """
+        password = "***"
+        #port = 465  # for SSL
+        smtp_server = "smtp.wp.pl"
+        sender_email = "***"
+        receiver_email = "***"
+
+        server = smtplib.SMTP_SSL(smtp_server, 465)
+        server.login(sender_email, password)
+        try:
+            zip_files = [f for f in os.listdir(self.zip_folder)]
+        except Exception as e:
+            logging.error("No files in the zipped directory: %s", e)
+        else:
+            if len(zip_files) > 0:
+                # send zip files in separated emails
+                for zip_file in zip_files:
+                    # create Email Message object
+                    msg = MIMEMultipart()
+
+                    msg['Subject'] = "Motion detection mail " + str(zip_files.index(zip_file) + 1)
+                    msg['From'] = sender_email
+                    msg['To'] = receiver_email
+                    email_body = "email content"
+                    body_part = MIMEText(email_body)
+                    msg.attach(body_part)
+
+                    with open(self.zip_folder + zip_file, 'rb') as file:
+                        msg.attach(MIMEApplication(file.read(), Name=zip_file ))
+
+                    server.sendmail(sender_email, receiver_email, msg.as_string())
+                server.quit()
+
+    def on_created(self, event):
+        """
+        Execute action when file was created
+        """
+
+        logging.info(" Got event for file %s", event.src_path)
+
+        # use queue for data exchange between threads
+        self.mqtt_queue.put(True)
+
+        FileHandler.file_counter += 1
+
+        if FileHandler.file_counter > 1:
+            FileHandler.file_counter = 0
+            # folder name with pictures & video generated by picamera during object detection
+            folder_name = event.src_path.split('/', 1)[0]
+            folder_name = event.src_path[0:event.src_path.rfind('/') + 1]
+
+            # remove all existing files from the zip folder
+            subprocess.run('rm -r ' + self.zip_folder + '*', shell=True)
+
+            # zip video/image files and put them into the temporary folder
+            subprocess.run("zip -r -s 10m " + self.zip_folder +
+                           "picamera_record.zip " + folder_name, shell=True)
+
+            # send zipped files to email address
+            FileHandler.send_email(self)
+
+
+class AlarmHandler():
+
+    def __init__(self):
+        self.mqtt_client = None
+
+        # Queue for mqtt data exchange between threads
+        # (on_message callback and check_alarm function)
+        self.mqtt_queue = Queue()
+
+        self.alarm_enabled = False
+        self.camera_enabled = False
+
+        self.alarm_delay_timer = Timer()
+        self.motion_detection_delay_timer = Timer()
+
+        self.btn_alarm_timer = Timer()
+        self.btn_camera_timer = Timer()
+
+        self.alarm_detected = False
+        self.main_door_opened = False
+
+        with open("/home/pi/scripts/alarm_status.json",
+                  "r",
+                  encoding="utf-8") as data_file:
+            data = json.load(data_file)
+
+        self.alarm_enabled = data['alarm_enabled']
+        self.camera_enabled = data['camera_enabled']
+
+        if self.camera_enabled:
+            bash_command = os.system("curl -k http://192.168.1.165:5001/motion_detect_enabled")
+        else:
+            logging.info(" Motion detection not enabled")
+
+        try:
+            t_read_buttons = Thread(target=self.read_buttons,
+                                            args=())
+            t_read_buttons.daemon = False
+            t_read_buttons.start()
+
+            t_check_alarm = Thread(target=self.check_alarm,
+                                            args=())
+            t_check_alarm.daemon = False
+            t_check_alarm.start()
+
+            t_check_camera_motion = Thread(target=self.check_camera_motion,
+                                            args=())
+            t_check_camera_motion.daemon = False
+            t_check_camera_motion.start()
+        except KeyboardInterrupt as a:
+            self.mqtt_client.disconnect()
+            self.alarm_delay_timer.stop()
+            self.motion_detection_delay_timer.stop()
+            self.btn_alarm_timer.stop()
+            self.btn_camera_timer.stop()
+
+    def on_mqtt_message(self, client, userdata, message):
+        """
+        Called when MQTT message received
+        """
+        msg = json.loads(message.payload.decode('utf-8'))
+
+        #logging.debug(message.topic, "  ",  msg)
+
+        # evaluate motion sensor from kitchen and other rooms
+        if message.topic == "HomeAutomation/Kitchen":
+            motion_sensor = msg["status_word"] & 0b01
+        else:
+            motion_sensor = msg["motion_sensor"]
+
+        # use queue for data exchange between threads
+        self.mqtt_queue.put(motion_sensor)
+
+    def on_mqtt_connect(self, client, userdata, flags, rc, properties):
+        """
+        Called when MQTT connection successfully established
+        """
+        if rc == 0:
+            logging.info(" Connected to MQTT Broker")
+        else:
+            logging.warning(" Failed to connect with result code %s", str(rc))
+
+        # Subscribing in on_connect() means that if we lose the connection and
+        # reconnect then subscriptions will be renewed.
+        self.mqtt_client.subscribe([ ("HomeAutomation/LivingRoom",1),
+                                    ("HomeAutomation/BedRoom",1),
+                                    ("HomeAutomation/Kitchen",1) ])
+
+    def connect_mqtt(self):
+        """
+        Connect to MQTT broker
+        """
+        while True:
+            try:
+                logging.info("Connecting to MQTT broker")
+                self.mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2,
+                                        "Client_AlarmHandler",
+                                        protocol=mqtt.MQTTv5)
+                self.mqtt_client.username_pw_set(BROKER_USERNAME, BROKER_PASSWORD)
+                self.mqtt_client.on_connect=self.on_mqtt_connect
+                self.mqtt_client.on_message = self.on_mqtt_message
+                self.mqtt_client.connect(BROKER_HOST, BROKER_PORT, 60)
+                self.mqtt_client.loop_start()
+                time.sleep(1)
+            except Exception as e:
+                logging.error("Error with MQTT connection %s", e)
+            else:
+                break
+
+    def read_buttons(self):
+        """
+        Evaluate input buttons states
+        and perform respective action: 
+        (enable/disable alarm or camera motion detection)
+        """
+        logging.info(" Reading inputs ")
+        while True:
+            #logging.info(" Reading inputs ")
+
+            btn_alarm = GPIO.input(BTN_ACTIVATE_ALARM_GPIO_PIN)
+            btn_camera = GPIO.input(BTN_ACTIVATE_MOTION_DETECT_GPIO_PIN)
+            self.main_door_opened = not GPIO.input(DOOR_OPENED_GPIO_PIN)
+
+            # ************** system shutdown request *****************
+            if btn_alarm and btn_camera:
+                play(SOUND_SYSTEM_SHUTDOWN)
+                os.system("sudo shutdown -h now")
+
+            # ************** alarm button evaluation *****************
+            elif GPIO.event_detected(BTN_ACTIVATE_ALARM_GPIO_PIN):
+                logging.debug(" GPIO22 pressed ")
+                if self.btn_alarm_timer.elapsed_time == 0:
+                    self.btn_alarm_timer.start()
+                else:
+                    self.btn_alarm_timer.stop()
+                    self.btn_alarm_timer.start()
+
+            # ************** camera button evaluation *****************
+            elif GPIO.event_detected(BTN_ACTIVATE_MOTION_DETECT_GPIO_PIN):
+                logging.debug(" GPIO23 pressed ")
+                if self.btn_camera_timer.elapsed_time == 0:
+                    self.btn_camera_timer.start()
+                else:
+                    self.btn_camera_timer.stop()
+                    self.btn_camera_timer.start()
+
+
+            if self.btn_alarm_timer.elapsed_time > 2.0:
+                self.btn_alarm_timer.stop()
+
+            # check if button pressed 100ms
+            if self.btn_alarm_timer.elapsed_time > 0.10 and btn_alarm:
+                self.btn_alarm_timer.stop()
+                #logging.info(" GPIO22 pressed")
+                if not self.alarm_enabled:
+                    self.alarm_enabled = True
+                    self.write_alarm_status("/home/pi/scripts/alarm_status.json",
+                                            "alarm_enabled",
+                                            True)
+                    self.alarm_delay_timer.start()
+                    play(SOUND_ALARM_ENABLED)
+                    time.sleep(1)
+
+                elif self.alarm_enabled:
+                    self.alarm_enabled = False
+                    self.alarm_detected = False
+                    self.mqtt_queue.put(False)
+                    self.write_alarm_status("/home/pi/scripts/alarm_status.json",
+                                            "alarm_enabled",
+                                            False)
+                    try:
+                        self.alarm_delay_timer.stop()
+                        play(SOUND_ALARM_DISABLED)
+                    except Exception as e:
+                        logging.warning(" Timer not started: %s", e)
+
+                    time.sleep(1)
+
+
+            if self.btn_camera_timer.elapsed_time > 2.0:
+                self.btn_camera_timer.stop()
+
+            # check if button pressed 100ms
+            if self.btn_camera_timer.elapsed_time > 0.10 and btn_camera:
+                self.btn_camera_timer.stop()
+                #logging.info(" GPIO23 pressed")
+
+                if not self.camera_enabled:
+                    self.camera_enabled = True
+                    self.write_alarm_status("/home/pi/scripts/alarm_status.json",
+                                            "camera_enabled",
+                                            True)
+                    # enable motion detection for 'motioneye'
+                    bash_command = os.system("curl -k http://192.168.1.165:5001/motion_detect_enabled")
+
+                    self.motion_detection_delay_timer.start()
+                    play(SOUND_CAMERA_ENABLED)
+                    time.sleep(1)
+
+
+                elif self.camera_enabled:
+                    self.camera_enabled = False
+                    self.mqtt_queue.put(False)
+                    self.write_alarm_status("/home/pi/scripts/alarm_status.json",
+                                            "camera_enabled",
+                                            False)
+                    # disable motion detection for 'motioneye'
+                    bash_command = os.system("curl -k http://192.168.1.165:5001/motion_detect_disabled")
+
+                    try:
+                        self.motion_detection_delay_timer.stop()
+                    except Exception as e:
+                        logging.warning("Timer not started: %s", e)
+                    finally:
+                        play(SOUND_CAMERA_DISABLED)
+                        time.sleep(1)
+
+            # pause to debounce
+            time.sleep(0.05)
+
+            # activate motion detection with 20 sec. delay from button pressed
+            if self.motion_detection_delay_timer.elapsed_time > 20:
+                # enable motion detection for 'motioneye'
+                bash_command = os.system("curl -k http://192.168.1.165:5001/motion_detect_enabled")
+                self.motion_detection_delay_timer.stop()
+
+    def check_alarm(self):
+        """
+        Evaluate continuously if any alarm occured
+        """
+        # timer to send regulary alarm/camera status over mqtt
+        timer_send_mqtt = Timer()
+        timer_send_mqtt.start()
+
+        while True:
+            logging.debug(" queue = %s", str(self.mqtt_queue.get()))
+            # main door opened when alarm was enabled
+            if (self.main_door_opened and self.alarm_enabled and self.alarm_delay_timer.elapsed_time > 20) \
+                or self.alarm_detected \
+                or (self.alarm_enabled and self.mqtt_queue.get() == 1):
+                logging.info(" Main door opened OR motion detected %s", str(self.mqtt_queue.get()))
+                self.alarm_detected = True
+                play(SIREN1)
+
+            # reduce CPU usage in while loop
+            time.sleep(0.4)
+
+            # send alarm/camera status every 5 sec. over mqtt
+            if timer_send_mqtt.elapsed_time > 5:
+                timer_send_mqtt.stop()
+                alarm_status = {"alarm_enabled": self.alarm_enabled,
+                                "camera_enabled": self.camera_enabled,
+                                "alarm_detected": self.alarm_detected
+                                }
+
+                self.mqtt_client.publish(topic="HomeAutomation/AlarmStatus",
+                                        payload=json.dumps(alarm_status),
+                                        qos=1,
+                                        retain=False)
+
+                timer_send_mqtt.start()
+
+    def check_camera_motion(self):
+        """
+        Check if any new files generated by Picamera occured in
+        given location.
+        If yes, the FileHandler will zip them, save into `motion_videos_zipped`
+        and send notification email.
+        """
+
+        observer = Observer()
+        # define folder where zipped image/video files will be stored
+        event_handler = FileHandler(
+            zip_folder = '/home/pi/home_automation_project/src/picamera_motion/motion_videos_zipped/',
+            mqtt_queue = self.mqtt_queue)
+
+        # set observer to use created handler in directory where image/video files are created
+        observer.schedule(event_handler, path='/home/pi/home_automation_project/src/picamera_motion/motion_videos/',
+                          recursive=True)
+        observer.start()
+
+        # sleep until keyboard interrupt, then stop + rejoin the observer
+        try:
+            while True:
+                time.sleep(3)
+                logging.debug("Checking file system alive")
+
+        except KeyboardInterrupt:
+            observer.stop()
+            observer.join()
+
+    def write_alarm_status(self, json_file, json_field, new_value):
+        """
+            It saves the alarm and camera monitoring status to the json file in current folder
+            The saved values are read out after power recycle / reset of RPi
+
+            args:
+                json_file: path to the json file
+                json_field: field in json file which must be updated
+                value: value which must be saved to the updated field   
+        """
+
+        val_updated = new_value
+
+        with open(json_file, "r", encoding="utf-8") as data_file:
+            data = json.load(data_file)
+
+        for key, value in data.items():
+            logging.info("%s : %s", key, value)
+            if key == json_field:
+                data[key] = val_updated
+
+                with open(json_file, "w", encoding="utf-8") as data_file:
+                    json.dump(data, data_file)
+
+
+if __name__ == "__main__":
+
+    alarm_handler = AlarmHandler()
+    alarm_handler.connect_mqtt()

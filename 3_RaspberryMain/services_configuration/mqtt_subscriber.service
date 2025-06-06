@@ -1,0 +1,21 @@
+[Unit]
+Description=Service script for automatic start of mqtt_subscriber.py
+#After=network.target
+#Wants=network.target
+
+After=multi-user.target
+
+
+[Service]
+User=pi
+Type=simple
+
+ExecStart=/usr/local/bin/python3.10 /home/pi/home_automation_project/src/mqtt_subscriber.py 1>/dev/null
+
+#Restart=on-failure
+StandardOutput=null
+StandardError=journal
+
+
+[Install]
+WantedBy=multi-user.target

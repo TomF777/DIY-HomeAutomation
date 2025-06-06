@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./static/css/menu_buttons.css">
+    
+
+    <title>Outdoor Data</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript" >
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawGauge);
+
+
+      function drawChart() {
+
+        // line chart for outdoor temperature/humidity
+        var data1_1 = google.visualization.arrayToDataTable({{histDataTempHumid|safe}});
+        var options1_1 = {
+          title: '',
+          explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+          hAxis: { title: '---', viewWindowMode: 'pretty'  },
+          vAxis: { title: 'oC - %', viewWindowMode: 'pretty',  minValue: -30, maxValue:100, viewWindow: {max: 100, min: -30}, ticks: [-30,-20,-10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] },
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart1_1 = new google.visualization.LineChart(document.getElementById('chart_temp_humid'));
+        chart1_1.draw(data1_1, options1_1);
+
+
+        // line chart for outdoor pressure
+        var data1_2 = google.visualization.arrayToDataTable({{histDataPressure|safe}});
+        var options1_2 = {
+          title: '',
+          explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+          hAxis: { title: '---', viewWindowMode: 'pretty'  },
+          vAxis: { title: 'hPa', maxValue:1100, minValue: 960, viewWindow: {max: 1100, min: 960}, ticks: [950, 970, 990, 1010, 1030, 1050, 1070, 1090, 1100]},
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart1_2 = new google.visualization.LineChart(document.getElementById('chart_pressure'));
+        chart1_2.draw(data1_2, options1_2);
+
+        // line chart for outdoor PM - air pollution
+        var data1_3 = google.visualization.arrayToDataTable({{histDataPMout|safe}});
+        var options1_3 = {
+          title: '',
+          explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+          hAxis: { title: '---', viewWindowMode: 'pretty'  },
+          vAxis: { title: 'ug/m3', maxValue:400, minValue: 0, viewWindow: {max: 400, min: 0}, ticks: [0, 50, 100, 150, 200, 250, 300, 350, 370, 390, 400]},
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart1_3 = new google.visualization.LineChart(document.getElementById('chart_pm_out'));
+        chart1_3.draw(data1_3, options1_3);
+
+      }
+
+      function drawGauge() {
+		
+       data1_1 = google.visualization.arrayToDataTable([
+         ['Label', 'Value'],
+         ['deg.C', {{temperature}}],
+       ]);
+       
+       options1_1 = {
+         width: 300, height: 150,
+         max:50, min:-30,
+         animation:{duration: 400},
+         greenColor:'#08E3E8',
+         redFrom:20, redTo:50,
+         yellowFrom:0, yellowTo:20,
+         greenFrom:-30, greenTo:0,
+         minorTicks: 5,
+         majorTicks: [-30,-20,-10,0,10,20,30,40,50]
+       };
+       
+       chart1_1 = new google.visualization.Gauge(document.getElementById('gauge1_1'));
+       chart1_1.draw(data1_1, options1_1);
+
+       //---------------------------------------------------------------------------------
+
+       data1_2 = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['%', {{humidity}}],
+        ]);
+     
+     options1_2 = {
+       width: 300, height: 150,
+       max:100, min:0,
+       animation:{duration: 400},
+       greenColor:'#08E3E8',
+       //redFrom:20, redTo:50,
+       //yellowFrom:0, yellowTo:20,
+       greenFrom:0, greenTo:100,
+       minorTicks: 5,
+       majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+     };
+     
+     chart1_2 = new google.visualization.Gauge(document.getElementById('gauge1_2'));
+     chart1_2.draw(data1_2, options1_2);
+
+    //---------------------------------------------------------------------------------
+
+       data1_3 = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['hPa', {{pressure}}],
+        ]);
+     
+     options1_3 = {
+       width: 300, height: 150,
+       max:1100, min:960,
+       animation:{duration: 400},
+       greenColor:'#13f70f',
+       redColor:'#fb8f15',
+       yellowColor:'#fb8f15',
+       redFrom:960, redTo:1000,
+       greenFrom:1000, greenTo:1020,
+       yellowFrom:1020, yellowTo:1100,
+       minorTicks: 5,
+       majorTicks: [960,980,1000,1020,1040,1060,1080,1100]
+     };
+     
+     chart1_3 = new google.visualization.Gauge(document.getElementById('gauge1_3'));
+     chart1_3.draw(data1_3, options1_3);
+
+    //---------------------------------------------------------------------------------
+
+       data1_4 = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['unit', {{pm1_out}}],
+        ]);
+     
+      options1_4 = {
+        width: 300, height: 150,
+        max:400, min:0,
+        animation:{duration: 400},
+        greenColor:'#13f70f',
+        redFrom:50, redTo:400,
+        greenFrom:0, greenTo:25,
+        yellowFrom:25, yellowTo:50,
+        minorTicks: 10,
+        majorTicks: [0,50,100,150,200,250,300,350,400]
+      };
+     
+      chart1_4 = new google.visualization.Gauge(document.getElementById('gauge1_4'));
+      chart1_4.draw(data1_4, options1_4);
+
+
+    //---------------------------------------------------------------------------------
+    data1_5 = google.visualization.arrayToDataTable([
+    ['Label', 'Value'],
+    ['unit', {{pm2_5_out}}],
+    ]);
+ 
+    options1_5 = {
+      width: 300, height: 150,
+      max:400, min:0,
+      animation:{duration: 400},
+      greenColor:'#13f70f',
+      redFrom:50, redTo:400,
+      greenFrom:0, greenTo:25,
+      yellowFrom:25, yellowTo:50,
+      minorTicks: 10,
+      majorTicks: [0,50,100,150,200,250,300,350,400]
+    };
+
+    chart1_5 = new google.visualization.Gauge(document.getElementById('gauge1_5'));
+    chart1_5.draw(data1_5, options1_5);
+
+    //---------------------------------------------------------------------------------
+    data1_6 = google.visualization.arrayToDataTable([
+    ['Label', 'Value'],
+    ['unit', {{pm10_out}}],
+    ]);
+ 
+    options1_6 = {
+      width: 300, height: 150,
+      max:400, min:0,
+      animation:{duration: 400},
+      greenColor:'#13f70f',
+      redFrom:200, redTo:300,
+      greenFrom:0, greenTo:50,
+      yellowFrom:50, yellowTo:200,
+      minorTicks: 10,
+      majorTicks: [0,50,100,150,200,250,300,350,400]
+    };
+
+    chart1_6 = new google.visualization.Gauge(document.getElementById('gauge1_6'));
+    chart1_6.draw(data1_6, options1_6);
+
+    }
+  
+
+
+    </script>
+</head>
+
+
+<body>
+    <a href="/main" class="menu_btn">Outside Data</a>
+    <a href="/rooms" class="menu_btn">Rooms</a>
+    <a href="/electrical" class="menu_btn">Electrical</a>
+    <a href="/system_status" class="menu_btn">System Status</a>
+    <a href="/camera" class="menu_btn">Camera</a>
+
+    <h1 style="font-family: courier;" align="center">HOME Automation System</h1>
+
+  <!--  <div id="table_div" style="width: 800px; height: 500px"></div> -->
+
+    <div style="position:relative; left:15px; top:20px"> 
+        <p  style="position:relative;width:350px; left:5px; font-family:courier" >Outdoor Temperature</p> 
+        <div id="gauge1_1" style="width: 100px; height: 50px"></div>
+    </div>
+
+    <div style="position:relative; left:220px; top:-80px"> 
+        <p  style="position:relative;width:350px; left:5px; font-family:courier" >Outdoor Humidity</p> 
+        <div id="gauge1_2" style="width: 100px; height: 50px"></div>
+    </div>
+
+    <div style="position:relative; left:420px; top: -120px; font-family:courier">
+    <p> Number of samples to retrieve:
+      <form method="POST">
+        <input name="numbersamples">
+        <input type="submit">
+      </form></p>
+    </div>
+
+    <div style="position:relative; left:-20px; top:-70px">
+      <div id="chart_temp_humid" style="width: 700px; height: 300px"></div>
+    </div>
+
+    <div style="position:relative; left:800px; top:-570px"> 
+      <p  style="position:relative;width:350px; left:5px; font-family:courier" >Air Pressure</p> 
+      <div id="gauge1_3" style="width: 100px; height: 50px"></div>
+  </div>
+
+  <div style="position:relative; left:620px; top:-470px">
+    <div id="chart_pressure" style="width: 600px; height: 300px"></div>
+  </div>
+
+  <div style="position:relative; left:1300px; top:-980px"> 
+    <p  style="position:relative;width:350px; left:5px; font-family:courier" >PM1 outside</p> 
+    <div id="gauge1_4" style="width: 100px; height: 50px"></div>
+  </div>
+
+  <div style="position:relative; left:1500px; top:-1080px"> 
+    <p  style="position:relative;width:350px; left:5px; font-family:courier" >PM2.5 outside</p> 
+    <div id="gauge1_5" style="width: 100px; height: 50px"></div>
+  </div>
+
+  <div style="position:relative; left:1700px; top:-1180px"> 
+    <p  style="position:relative;width:350px; left:5px; font-family:courier" >PM10 outside</p> 
+    <div id="gauge1_6" style="width: 100px; height: 50px"></div>
+  </div>
+
+  <div style="position:relative; left:1300px; top:-1080px">
+    <div id="chart_pm_out" style="width: 600px; height: 300px"></div>
+  </div>
+
+
+</body>
+</html>

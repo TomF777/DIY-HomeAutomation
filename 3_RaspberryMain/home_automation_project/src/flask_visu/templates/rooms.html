@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- <link rel="stylesheet" href='../static/style.css'/> -->
+
+      <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="./static/css/led_lights.css">
+      <link rel="stylesheet" href="./static/css/menu_buttons.css">
+      <link rel="stylesheet" href="./static/css/push_button_style.css">
+      <link rel="stylesheet" href="./static/css/slider_style.css">
+      
+
+      <meta charset="UTF-8">
+      <title>Outdoor Data</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	  <style>
+		body {
+			text-align: center;
+		}
+
+         {
+            box-sizing: border-box;
+          }
+
+
+        /* Set additional styling options for the columns */
+        .column {
+        float: left;
+        width: 22%;
+        padding: 10px;
+        height: 800px; 
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .inline-block-child {
+          display: inline-block;
+        }
+
+	   </style>
+
+       <script type="text/javascript">
+        
+        //prevent re-submit on refresh
+        if (window.history.replaceState) {
+                                          window.history.replaceState(null, null, window.location.href);
+                                         }
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart); 
+  
+        google.charts.load('current', {'packages':['gauge']});
+        google.charts.setOnLoadCallback(drawGauge);
+
+        function drawChart() {
+
+          // line chart for living room temperature/humidity
+          var chart_data = google.visualization.arrayToDataTable({{histDataTempHumidLivingRoom|safe}});
+          var chart_options = {
+            title: '',
+            explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+            hAxis: { title: '---', viewWindowMode: 'pretty'  },
+            vAxis: { title: 'oC - %', viewWindowMode: 'pretty',  minValue: -30, maxValue:100, viewWindow: {max: 100, min: -30}, ticks: [-30,-20,-10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] },
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart_living_room_temp_humid'));
+          chart.draw(chart_data, chart_options);
+
+
+          // line chart for kitchen temperature/humidity
+          var chart_data = google.visualization.arrayToDataTable({{histDataTempHumidKitchen|safe}});
+          var chart_options = {
+            title: '',
+            explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+            hAxis: { title: '---', viewWindowMode: 'pretty'  },
+            vAxis: { title: 'oC - %', viewWindowMode: 'pretty',  minValue: -30, maxValue:100, viewWindow: {max: 100, min: -30}, ticks: [-30,-20,-10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] },
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart_kitchen_temp_humid'));
+          chart.draw(chart_data, chart_options);
+
+
+      
+          // line chart for bed room temperature/humidity
+          var chart_data = google.visualization.arrayToDataTable({{histDataTempHumidBedRoom|safe}});
+          var chart_options = {
+            title: '',
+            explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+            hAxis: { title: '---', viewWindowMode: 'pretty'  },
+            vAxis: { title: 'oC - %', viewWindowMode: 'pretty',  minValue: -30, maxValue:100, viewWindow: {max: 100, min: -30}, ticks: [-30,-20,-10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] },
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart_bedroom_temp_humid'));
+          chart.draw(chart_data, chart_options);
+
+
+          // line chart for bath room temperature/humidity
+          var chart_data = google.visualization.arrayToDataTable({{histDataTempHumidBathRoom|safe}});
+          var chart_options = {
+            title: '',
+            explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+            hAxis: { title: '---', viewWindowMode: 'pretty'  },
+            vAxis: { title: 'oC - %', viewWindowMode: 'pretty',  minValue: -30, maxValue:100, viewWindow: {max: 100, min: -30}, ticks: [-30,-20,-10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] },
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart_bathroom_temp_humid'));
+          chart.draw(chart_data, chart_options);
+
+          // line chart for bedroom PM - air pollution
+          var chart_data = google.visualization.arrayToDataTable({{histDataPMBedroom|safe}});
+          var chart_options = {
+            title: '',
+            explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
+            hAxis: { title: '---', viewWindowMode: 'pretty'  },
+            vAxis: { title: 'ug/m3', maxValue:400, minValue: 0, viewWindow: {max: 400, min: 0}, ticks: [0, 50, 100, 150, 200, 250, 300, 350, 370, 390, 400]},
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart_pm_bedroom'));
+          chart.draw(chart_data, chart_options);
+
+        }
+
+
+        function drawGauge() {
+		
+            data_living_temp = google.visualization.arrayToDataTable([
+              ['Label', 'Value'],
+              ['deg.C', {{temperature_living}}],
+            ]);
+            
+            options_living_temp = {
+              width: 300, height: 150,
+              max:50, min:-30,
+              animation:{duration: 400},
+              greenColor:'#08E3E8',
+              redFrom:20, redTo:50,
+              yellowFrom:0, yellowTo:20,
+              greenFrom:-30, greenTo:0,
+              minorTicks: 5,
+              majorTicks: [-30,-20,-10,0,10,20,30,40,50]
+            };
+            
+            chart_living_temp = new google.visualization.Gauge(document.getElementById('gauge_living_temp'));
+            chart_living_temp.draw(data_living_temp, options_living_temp);
+     
+            //---------------------------------------------------------------------------------
+     
+            data_living_humid = google.visualization.arrayToDataTable([
+             ['Label', 'Value'],
+             ['%', {{humidity_living}}],
+             ]);
+          
+            options_living_humid = {
+                width: 300, height: 150,
+                max:100, min:0,
+                animation:{duration: 400},
+                greenColor:'#08E3E8',
+                //redFrom:20, redTo:50,
+                //yellowFrom:0, yellowTo:20,
+                greenFrom:0, greenTo:100,
+                minorTicks: 5,
+                majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+            };
+            
+            chart_living_humid = new google.visualization.Gauge(document.getElementById('gauge_living_humid'));
+            chart_living_humid.draw(data_living_humid, options_living_humid);
+
+          //---------------------------------------------------------------------------------
+
+            data_kitchen_temp = google.visualization.arrayToDataTable([
+            ['Label', 'Value'],
+            ['deg.C', {{temperature_kitchen}}],
+          ]);
+          
+          options_kitchen_temp = {
+            width: 300, height: 150,
+            max:50, min:-30,
+            animation:{duration: 400},
+            greenColor:'#08E3E8',
+            redFrom:20, redTo:50,
+            yellowFrom:0, yellowTo:20,
+            greenFrom:-30, greenTo:0,
+            minorTicks: 5,
+            majorTicks: [-30,-20,-10,0,10,20,30,40,50]
+          };
+          
+          chart_kitchen_temp = new google.visualization.Gauge(document.getElementById('gauge_kitchen_temp'));
+          chart_kitchen_temp.draw(data_kitchen_temp, options_kitchen_temp);
+   
+          //---------------------------------------------------------------------------------
+   
+          data_kitchen_humid = google.visualization.arrayToDataTable([
+           ['Label', 'Value'],
+           ['%', {{humidity_kitchen}}],
+           ]);
+        
+          options_kitchen_humid = {
+              width: 300, height: 150,
+              max:100, min:0,
+              animation:{duration: 400},
+              greenColor:'#08E3E8',
+              //redFrom:20, redTo:50,
+              //yellowFrom:0, yellowTo:20,
+              greenFrom:0, greenTo:100,
+              minorTicks: 5,
+              majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+          };
+          
+          chart_kitchen_humid = new google.visualization.Gauge(document.getElementById('gauge_kitchen_humid'));
+          chart_kitchen_humid.draw(data_kitchen_humid, options_kitchen_humid);
+
+          //---------------------------------------------------------------------------------
+
+          data_bedroom_temp = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['deg.C', {{temperature_bedroom}}],
+           ]);
+        
+          options_bedroom_temp = {
+            width: 300, height: 150,
+            max:50, min:-30,
+            animation:{duration: 400},
+            greenColor:'#08E3E8',
+            redFrom:20, redTo:50,
+            yellowFrom:0, yellowTo:20,
+            greenFrom:-30, greenTo:0,
+            minorTicks: 5,
+            majorTicks: [-30,-20,-10,0,10,20,30,40,50]
+          };
+          
+          chart_bedroom_temp = new google.visualization.Gauge(document.getElementById('gauge_bedroom_temp'));
+          chart_bedroom_temp.draw(data_bedroom_temp, options_bedroom_temp);
+
+          //---------------------------------------------------------------------------------
+
+          data_bedroom_humid = google.visualization.arrayToDataTable([
+           ['Label', 'Value'],
+           ['%', {{humidity_bedroom}}],
+           ]);
+        
+          options_bedroom_humid = {
+              width: 300, height: 150,
+              max:100, min:0,
+              animation:{duration: 400},
+              greenColor:'#08E3E8',
+              //redFrom:20, redTo:50,
+              //yellowFrom:0, yellowTo:20,
+              greenFrom:0, greenTo:100,
+              minorTicks: 5,
+              majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+          };
+          
+          chart_bedroom_humid = new google.visualization.Gauge(document.getElementById('gauge_bedroom_humid'));
+          chart_bedroom_humid.draw(data_bedroom_humid, options_bedroom_humid);
+
+          //---------------------------------------------------------------------------------
+          var color_pm1
+          var color_pm2_5
+          var color_10
+          if ({{pm1_in_bedroom}} < 25) {color_pm1='color:green';} else if ( {{pm1_in_bedroom}} >= 25 && {{pm1_in_bedroom}} < 50 ) {color_pm1='color:orange';}
+          if ({{pm2_5_in_bedroom}} < 25) {color_pm2_5='color:green';} else if ( {{pm2_5_in_bedroom}} >= 25 && {{pm2_5_in_bedroom}} < 50 ) {color_pm2_5='color:orange';}
+          if ({{pm10_in_bedroom}} < 25) {color_pm10='color:green';} else if ( {{pm10_in_bedroom}} >= 25 && {{pm10_in_bedroom}} < 50 ) {color_pm10='color:orange';}
+          
+          data_bedroom_pm = google.visualization.arrayToDataTable([
+          ['Label', 'Value', { role: 'style' }],
+          ['PM1', {{pm1_in_bedroom}}, color_pm1],
+          ['PM2.5', {{pm2_5_in_bedroom}}, color_pm2_5],
+          ['PM10', {{pm10_in_bedroom}}, color_pm10],
+            ]);
+        
+          options_bedroom_pm = {
+            title: 'Polution Measurement',
+            width: 400, height: 120,
+            max:1.5 * Math.max({{pm1_in_bedroom}}, {{pm2_5_in_bedroom}}, {{pm10_in_bedroom}}), min:0,
+            animation:{duration: 400},
+            legend: {position: 'none'}
+          };
+          
+          chart_bedroom_pm = new google.visualization.BarChart(document.getElementById('gauge_bedroom_pm'));
+          chart_bedroom_pm.draw(data_bedroom_pm, options_bedroom_pm);
+          //---------------------------------------------------------------------------------
+
+          data_bathroom_temp = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['deg.C', {{temperature_bathroom}}],
+           ]);
+        
+          options_bathroom_temp = {
+            width: 300, height: 150,
+            max:50, min:-30,
+            animation:{duration: 400},
+            greenColor:'#08E3E8',
+            redFrom:20, redTo:50,
+            yellowFrom:0, yellowTo:20,
+            greenFrom:-30, greenTo:0,
+            minorTicks: 5,
+            majorTicks: [-30,-20,-10,0,10,20,30,40,50]
+          };
+          
+          chart_bathroom_temp = new google.visualization.Gauge(document.getElementById('gauge_bathroom_temp'));
+          chart_bathroom_temp.draw(data_bathroom_temp, options_bathroom_temp);
+
+          //---------------------------------------------------------------------------------
+
+          data_bathroom_humid = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['%', {{humidity_bathroom}}],
+          ]);
+       
+         options_bathroom_humid = {
+             width: 300, height: 150,
+             max:100, min:0,
+             animation:{duration: 400},
+             greenColor:'#08E3E8',
+             //redFrom:20, redTo:50,
+             //yellowFrom:0, yellowTo:20,
+             greenFrom:0, greenTo:100,
+             minorTicks: 5,
+             majorTicks: [0,10,20,30,40,50,60,70,80,90,100]
+         };
+         
+         chart_bathroom_humid = new google.visualization.Gauge(document.getElementById('gauge_bathroom_humid'));
+         chart_bathroom_humid.draw(data_bathroom_humid, options_bathroom_humid);
+
+         //---------------------------------------------------------------------------------
+
+        }
+
+       </script>  
+
+   </head>
+   <body>
+    <div align="left">
+      <a href="/main" class="menu_btn">Outside Data</a>
+      <a href="/rooms" class="menu_btn">Rooms</a>
+      <a href="/electrical" class="menu_btn">Electrical</a>
+      <a href="/system_status" class="menu_btn">System Status</a>
+      <a href="/camera" class="menu_btn">Camera</a>
+    </div>
+
+    <!-- 1st row -->
+    <div class="parent" align="center">
+      <div class="child inline-block-child" align="center">  
+        <h1 style="font-family: courier;" >HOME Automation System</h1>
+      </div>
+
+      <div class="child inline-block-child" align="right">  
+        <h1 style="font-family: courier;" ></h1>
+      </div>
+
+      <div align="right" class="child inline-block-child" style="font-family:courier">
+        <p> Number of samples to retrieve:
+          <form method="POST">
+            <input name="numbersamples">
+            <input type="submit">
+          </form></p>
+      </div>
+
+    </div>
+
+    <!-- 2nd row -->
+    <div class="parent" align="center">
+      <div class="child inline-block-child">
+        <input
+
+        {% if alarm_enabled == True %}
+        style="height:40px; width:100px; background-color:#003344;"
+        value=" alarm enabled"
+        {% else %}
+        style="height:40px; width:100px; background-color:#5d99e8;"
+        value=" alarm disabled"
+        {% endif %}
+        
+        id="dlbutton"  name="alarm_enabled_status"/>
+
+      </div>
+
+      <div class="child inline-block-child">
+        <input
+
+        {% if camera_enabled == True %}
+        style="height:40px; width:100px; background-color:#003344;"
+        value="motion enabled"
+        {% else %}
+        style="height:40px; width:100px; background-color:#5d99e8;"
+        value="motion disabled"
+        {% endif %}
+        
+        id="dlbutton"  name="camera_enabled_status"/>
+
+      </div>
+
+      <div class="child inline-block-child" align="right">  
+        <h1 style="font-family: courier; color:#FFFFFF;" > ___ </h1>
+        <p> </p>
+      </div>
+
+      <div class="child inline-block-child" align="right">
+        {% if alarm_detected == True %}
+        <div class="led-red">
+          <p style="font-family: courier; position:relative; left:40px; top:0px; color:#FF0000; "> ALARM!</p>
+        </div>
+        {% else %}
+            <div class="led-green">
+              <p style="font-family: courier; position:relative; left:40px; top:0px; color:#0e920e; ">OK</p>
+            </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+
+    <!-- 3rd row -->
+
+    <!-- =========================== living room ============================== -->
+    <div class="row">
+        <div class="column" style="background-color:#b8f79d;">
+            <h2 style="font-family: courier;"> living room </h2>
+
+            <div style="position:relative; left:0px; top:20px"> 
+                <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Temperature</p> 
+                <div id="gauge_living_temp" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:180px; top:-80px"> 
+                <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Humidity</p> 
+                <div id="gauge_living_humid" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:10px; top:40px">
+              <div id="chart_living_room_temp_humid" style="width: 400px; height: 150px"></div>
+            </div>
+
+            <form method="post" action="/rooms">
+              <div style="position:relative; left:-120px; top:80px; ">
+                  <input 
+
+                  {% if switch_light_living_command == "ON" %}
+                  style="height:40px; width:80px; background-color:#38C60A;"
+                  {% else %}
+                  style="height:40px; width:80px; background-color:#F45C3D;"
+                  {% endif %}
+                  
+                  id="dlbutton" type="submit" value={{switch_light_living_command}} name="switch_light_living"/>
+
+              </div>
+            </form>
+
+            <div id="slider" style="position:relative; left:0px; top:130px; width:200px">
+              <input type="range" min="1" max="100" class="slider" id="mySlider1_1" >
+              <p style="font-family:courier">Value=: <span 30></span></p>
+              <p style="position:relative; left:10px; top:-50px; font-family:courier; font-size:18px;" >Heating</p>
+            </div>
+
+        </div>
+
+        <!-- =========================== kitchen room ============================== -->
+        <div class="column" style="background-color:#118812;">
+            <h2 style="font-family: courier;"> kitchen </h2>
+
+            <div style="position:relative; left:20px; top:20px"> 
+              <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Temperature</p> 
+              <div id="gauge_kitchen_temp" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:200px; top:-80px"> 
+                <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Humidity</p> 
+                <div id="gauge_kitchen_humid" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:10px; top:40px">
+              <div id="chart_kitchen_temp_humid" style="width: 400px; height: 150px"></div>
+            </div>
+
+            <form method="post" action="/rooms">
+              <div style="position:relative; left:-120px; top:80px; ">
+                  <input 
+
+                  {% if switch_light_kitchen_command == "ON" %}
+                  style="height:40px; width:80px; background-color:#38C60A;"
+                  {% else %}
+                  style="height:40px; width:80px; background-color:#F45C3D;"
+                  {% endif %}
+                  
+                  id="dlbutton" type="submit" value={{switch_light_kitchen_command}} name="switch_light_kitchen"/>
+
+              </div>
+            </form>
+
+        </div>
+
+        <!-- =========================== bed room ============================== -->
+        <div class="column" style="background-color:#b8f79d;">
+            <h2 style="font-family: courier;"> bed room </h2>
+
+            <div style="position:relative; left:20px; top:20px"> 
+              <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Temperature</p> 
+              <div id="gauge_bedroom_temp" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:200px; top:-80px"> 
+                <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Humidity</p> 
+                <div id="gauge_bedroom_humid" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:10px; top:40px">
+              <div id="chart_bedroom_temp_humid" style="width: 400px; height: 150px"></div>
+            </div>
+
+            <form method="post" action="/rooms">
+              <div style="position:relative; left:-120px; top:80px; ">
+                  <input 
+
+                  {% if switch_light_bedroom_command == "ON" %}
+                  style="height:40px; width:80px; background-color:#38C60A;"
+                  {% else %}
+                  style="height:40px; width:80px; background-color:#F45C3D;"
+                  {% endif %}
+                  
+                  id="dlbutton" type="submit" value={{switch_light_bedroom_command}} name="switch_light_bedroom"/>
+
+              </div>
+            </form>
+          
+            <div style="position:relative; left:10px; top:80px"> 
+              <div id="gauge_bedroom_pm" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:10px; top:180px">
+              <div id="chart_pm_bedroom" style="width: 400px; height: 150px"></div>
+            </div>
+
+        </div>
+
+        <!-- =========================== bath room ============================== -->
+        <div class="column" style="background-color:#118812;">
+            <h2 style="font-family: courier;"> bath room </h2>
+
+            <div style="position:relative; left:20px; top:20px"> 
+              <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Temperature</p> 
+              <div id="gauge_bathroom_temp" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:200px; top:-80px"> 
+                <p  style="position:relative;width:350px; left:-100px; font-family:courier" >Humidity</p> 
+                <div id="gauge_bathroom_humid" style="width: 100px; height: 50px"></div>
+            </div>
+
+            <div style="position:relative; left:10px; top:40px">
+              <div id="chart_bathroom_temp_humid" style="width: 400px; height: 150px"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+	
+
+   </body>
+</html>
