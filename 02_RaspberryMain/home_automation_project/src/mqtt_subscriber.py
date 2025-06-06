@@ -24,8 +24,8 @@ logging.basicConfig(level=logging.DEBUG)
 # mqtt settings
 BROKER_HOST = "192.168.1.165"
 BROKER_PORT = 1883
-BROKER_USERNAME = 'mqttbroker'
-BROKER_PASSWORD = 'IoT@2023'
+BROKER_USERNAME = '***'
+BROKER_PASSWORD = '***'
 FIRST_RECONNECT_DELAY = 1
 RECONNECT_RATE = 2
 MAX_RECONNECT_COUNT = 12
@@ -33,8 +33,8 @@ MAX_RECONNECT_DELAY = 60
 
 # MySQL settings
 MYSQL_HOST = "localhost"
-MYSQL_USER = "mysql_user"
-MYSQL_PASSWORD = "Internet1!"
+MYSQL_USER = "***"
+MYSQL_PASSWORD = "***"
 MYSQL_DB_NAME = "db_home_automation"
 
 

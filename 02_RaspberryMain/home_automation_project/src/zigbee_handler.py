@@ -25,8 +25,8 @@ GPIO.setup(ZIGBEE_ENABLE_GPIO_PIN, GPIO.OUT)
 # mqtt settings
 BROKER_HOST = "192.168.1.165"
 BROKER_PORT = 1883
-BROKER_USERNAME = 'mqttbroker'
-BROKER_PASSWORD = 'IoT@2023'
+BROKER_USERNAME = '***'
+BROKER_PASSWORD = '***'
 
 # main structure to store incoming data from bath and kitchen by zigbee
 monitor_data = {'fridge_live_bit': 0,

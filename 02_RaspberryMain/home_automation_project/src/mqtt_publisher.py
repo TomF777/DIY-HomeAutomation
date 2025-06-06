@@ -32,8 +32,8 @@ GPIO.setup(17, GPIO.OUT)
 # mqtt broker settings
 BROKER_HOST = "192.168.1.165"
 BROKER_PORT = 1883
-BROKER_USERNAME = 'mqttbroker'
-BROKER_PASSWORD = 'IoT@2023'
+BROKER_USERNAME = '***'
+BROKER_PASSWORD = '***'
 
 def on_connect(client, userdata, flags, rc, props):
     """
