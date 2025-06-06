@@ -18,11 +18,11 @@ Collected sensor data are stored in MySQL DB and visulized on Grafana and using 
 
 The system delivers following features:
 - measurement of `outdoor` parameters like temeprature, humidity, pressure, air pollution (PM1, PM2.5, PM10):
-<img src="./00_docs/GrafanaOutdoorGeneral.png" width="700">
+<img src="./00_docs/GrafanaOutdoorGeneral.png" width="1100">
 
 Example of SQL query in Grafana:
 
-<img src="./00_docs/GrafanaOutdoorSqlQuery.png" width="700">
+<img src="./00_docs/GrafanaOutdoorSqlQuery.png" width="1100">
 
 <br>
 
