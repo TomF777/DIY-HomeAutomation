@@ -1,0 +1,4 @@
+paho_mqtt==2.1.0
+pyA20==0.2.12
+pyA20==0.2.12
+pyserial==3.5

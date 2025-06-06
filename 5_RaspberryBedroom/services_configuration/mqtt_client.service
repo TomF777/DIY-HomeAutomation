@@ -1,0 +1,17 @@
+
+[Unit]
+Description=My service script for automatic start of mqtt_publisher.py
+#After=multi-user.target
+After=network.target
+Wants=network.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/orangepi/home_automation_project/src/mqtt_publisher.py 1>/dev/null
+Restart=on-failure
+StandardOutput=null
+StandardError=journal
+
+
+[Install]
+WantedBy=multi-user.target
