@@ -1,0 +1,912 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 7,
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    }
+  ],
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<h1>\n<center>\n<font color=\"#70ee3a\"> LIVING ROOM </font>\n</center>\n</h1>",
+        "mode": "html"
+      },
+      "pluginVersion": "11.5.1",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "fillOpacity": 96,
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineWidth": 2,
+            "spanNulls": false
+          },
+          "displayName": "",
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 0,
+                  "text": ""
+                },
+                "1": {
+                  "index": 1,
+                  "text": ""
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 2,
+      "options": {
+        "alignValue": "left",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "mergeValues": false,
+        "rowHeight": 0.39,
+        "showValue": "auto",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT \r\n      UNIX_TIMESTAMP(Timestamp) as time,\r\n      Motion as motion_living\r\nFROM db_home_automation.room_living\r\nWHERE $__timeFilter(Timestamp)\r\nORDER BY Timestamp ASC ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Motion Presence",
+      "type": "state-timeline"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-green",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 40,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Humidity"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "right"
+              },
+              {
+                "id": "custom.axisSoftMin",
+                "value": 0
+              },
+              {
+                "id": "custom.axisSoftMax",
+                "value": 100
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 20,
+        "x": 0,
+        "y": 5
+      },
+      "id": 3,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  UNIX_TIMESTAMP(Timestamp) as time,\r\n  Temperature, Humidity\r\nFROM room_living\r\nWHERE $__timeFilter(Timestamp)\r\nORDER BY Timestamp ASC \r\n",
+          "refId": "B",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Humidity",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Room Data",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 0
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 20
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 20,
+        "y": 5
+      },
+      "id": 5,
+      "options": {
+        "allowNeedleCrossLimits": true,
+        "animateNeedleValueTransition": true,
+        "animateNeedleValueTransitionSpeed": 100,
+        "edgeWidth": 0.05,
+        "gaugeRadius": 0,
+        "innerColor": "super-light-green",
+        "markerEndEnabled": false,
+        "markerEndShape": "arrow",
+        "markerStartEnabled": false,
+        "markerStartShape": "circle",
+        "maxNeedleAngle": 320,
+        "maxTickAngle": 300,
+        "maxValue": 50,
+        "minValue": -20,
+        "needleColor": "#0099cc",
+        "needleCrossLimitDegrees": 10,
+        "needleLengthNeg": 0,
+        "needleTickGap": 0.05,
+        "needleWidth": 5,
+        "operatorName": "last",
+        "outerEdgeColor": "semi-dark-orange",
+        "padding": 0.05,
+        "pivotColor": "semi-dark-orange",
+        "pivotRadius": 0.1,
+        "showThresholdBandLowerRange": true,
+        "showThresholdBandMiddleRange": true,
+        "showThresholdBandOnGauge": false,
+        "showThresholdBandUpperRange": true,
+        "showThresholdStateOnBackground": false,
+        "showThresholdStateOnValue": false,
+        "tickEdgeGap": 0.05,
+        "tickFont": "Inter",
+        "tickLabelColor": "#000000",
+        "tickLabelFontSize": 26,
+        "tickLengthMaj": 0.15,
+        "tickLengthMin": 0.05,
+        "tickMajorColor": "#0099CC",
+        "tickMapConfig": {
+          "tickMaps": []
+        },
+        "tickMinorColor": "#000000",
+        "tickSpacingMajor": 10,
+        "tickSpacingMinor": 1,
+        "tickWidthMajor": 5,
+        "tickWidthMinor": 1,
+        "ticknessGaugeBasis": 200,
+        "unitsLabelColor": "#000000",
+        "valueFont": "Roboto Mono",
+        "valueFontSize": 48,
+        "valueYOffset": 0,
+        "zeroNeedleAngle": 40,
+        "zeroTickAngle": 60
+      },
+      "pluginVersion": "2.0.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT UNIX_TIMESTAMP(Timestamp) as time, Temperature FROM db_home_automation.room_living ORDER BY time DESC LIMIT 1",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Temperature",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Temperature",
+      "type": "briangann-gauge-panel"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 30
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 50
+              }
+            ]
+          },
+          "unit": "humidity"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 2,
+        "x": 22,
+        "y": 5
+      },
+      "id": 6,
+      "options": {
+        "allowNeedleCrossLimits": true,
+        "animateNeedleValueTransition": true,
+        "animateNeedleValueTransitionSpeed": 100,
+        "edgeWidth": 0.05,
+        "gaugeRadius": 0,
+        "innerColor": "super-light-green",
+        "markerEndEnabled": false,
+        "markerEndShape": "arrow",
+        "markerStartEnabled": false,
+        "markerStartShape": "circle",
+        "maxNeedleAngle": 320,
+        "maxTickAngle": 300,
+        "maxValue": 100,
+        "minValue": 0,
+        "needleColor": "#0099cc",
+        "needleCrossLimitDegrees": 10,
+        "needleLengthNeg": 0,
+        "needleTickGap": 0.05,
+        "needleWidth": 5,
+        "operatorName": "last",
+        "outerEdgeColor": "semi-dark-orange",
+        "padding": 0.05,
+        "pivotColor": "semi-dark-orange",
+        "pivotRadius": 0.1,
+        "showThresholdBandLowerRange": true,
+        "showThresholdBandMiddleRange": true,
+        "showThresholdBandOnGauge": false,
+        "showThresholdBandUpperRange": true,
+        "showThresholdStateOnBackground": false,
+        "showThresholdStateOnValue": false,
+        "tickEdgeGap": 0.05,
+        "tickFont": "Inter",
+        "tickLabelColor": "#000000",
+        "tickLabelFontSize": 26,
+        "tickLengthMaj": 0.15,
+        "tickLengthMin": 0.05,
+        "tickMajorColor": "#0099CC",
+        "tickMapConfig": {
+          "tickMaps": []
+        },
+        "tickMinorColor": "#000000",
+        "tickSpacingMajor": 10,
+        "tickSpacingMinor": 1,
+        "tickWidthMajor": 5,
+        "tickWidthMinor": 1,
+        "ticknessGaugeBasis": 200,
+        "unitsLabelColor": "#000000",
+        "valueFont": "Helvetica",
+        "valueFontSize": 48,
+        "valueYOffset": 0,
+        "zeroNeedleAngle": 40,
+        "zeroTickAngle": 60
+      },
+      "pluginVersion": "2.0.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT Humidity FROM db_home_automation.room_living",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Temperature",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Humidity",
+      "type": "briangann-gauge-panel"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 3,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 25
+              },
+              {
+                "color": "dark-red",
+                "value": 50
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "PM1_in"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "PM 1"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "PM2_5_in"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "PM 2.5"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "PM10_in"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "PM 10"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 20,
+        "x": 0,
+        "y": 13
+      },
+      "id": 7,
+      "maxDataPoints": 1000,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  UNIX_TIMESTAMP(Timestamp) as time,\r\n  PM1, PM2_5, PM10\r\nFROM room_living\r\nWHERE $__timeFilter(Timestamp)\r\nORDER BY Timestamp ASC \r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Air Pollution [ug/m3]",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 25
+              },
+              {
+                "color": "dark-red",
+                "value": 50
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "PM1_in"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "PM1"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "PM2_5_in"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "PM2.5"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "PM10_in"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "PM10"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 20,
+        "y": 13
+      },
+      "id": 8,
+      "options": {
+        "displayMode": "basic",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "maxVizHeight": 300,
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "namePlacement": "auto",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT UNIX_TIMESTAMP(Timestamp) as time, PM1, PM2_5, PM10 \r\nFROM db_home_automation.room_living\r\nORDER BY Timestamp DESC LIMIT 1\r\n\r\n\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Temperature",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Air Pollution [ug/m3]",
+      "type": "bargauge"
+    }
+  ],
+  "preload": false,
+  "refresh": "",
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Living room",
+  "uid": "adynp3strgc1sc",
+  "version": 26,
+  "weekStart": ""
+}

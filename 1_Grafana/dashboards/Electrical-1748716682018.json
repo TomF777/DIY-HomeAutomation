@@ -1,0 +1,578 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    }
+  ],
+  "panels": [
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 50
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 6,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "allowNeedleCrossLimits": true,
+        "animateNeedleValueTransition": true,
+        "animateNeedleValueTransitionSpeed": 100,
+        "edgeWidth": 0.05,
+        "gaugeRadius": 0,
+        "innerColor": "super-light-green",
+        "markerEndEnabled": false,
+        "markerEndShape": "arrow",
+        "markerStartEnabled": false,
+        "markerStartShape": "circle",
+        "maxNeedleAngle": 320,
+        "maxTickAngle": 300,
+        "maxValue": 100,
+        "minValue": 0,
+        "needleColor": "#161816",
+        "needleCrossLimitDegrees": 10,
+        "needleLengthNeg": 0,
+        "needleTickGap": 0.05,
+        "needleWidth": 5,
+        "operatorName": "last",
+        "outerEdgeColor": "semi-dark-orange",
+        "padding": 0.05,
+        "pivotColor": "semi-dark-orange",
+        "pivotRadius": 0.1,
+        "showThresholdBandLowerRange": true,
+        "showThresholdBandMiddleRange": true,
+        "showThresholdBandOnGauge": true,
+        "showThresholdBandUpperRange": true,
+        "showThresholdStateOnBackground": false,
+        "showThresholdStateOnValue": false,
+        "tickEdgeGap": 0.05,
+        "tickFont": "Inter",
+        "tickLabelColor": "#000000",
+        "tickLabelFontSize": 26,
+        "tickLengthMaj": 0.15,
+        "tickLengthMin": 0.05,
+        "tickMajorColor": "#43585f",
+        "tickMapConfig": {
+          "tickMaps": []
+        },
+        "tickMinorColor": "#000000",
+        "tickSpacingMajor": 10,
+        "tickSpacingMinor": 1,
+        "tickWidthMajor": 5,
+        "tickWidthMinor": 3,
+        "ticknessGaugeBasis": 180,
+        "unitsLabelColor": "#000000",
+        "valueFont": "Roboto Mono",
+        "valueFontSize": 48,
+        "valueYOffset": 0,
+        "zeroNeedleAngle": 40,
+        "zeroTickAngle": 60
+      },
+      "pluginVersion": "2.0.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT UNIX_TIMESTAMP(Timestamp) as time, L1 FROM db_home_automation.generic_current_integral ORDER BY time DESC LIMIT 1",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Temperature",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Phase L1",
+      "type": "briangann-gauge-panel"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 50
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 10,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "allowNeedleCrossLimits": true,
+        "animateNeedleValueTransition": true,
+        "animateNeedleValueTransitionSpeed": 100,
+        "edgeWidth": 0.05,
+        "gaugeRadius": 0,
+        "innerColor": "super-light-green",
+        "markerEndEnabled": false,
+        "markerEndShape": "arrow",
+        "markerStartEnabled": false,
+        "markerStartShape": "circle",
+        "maxNeedleAngle": 320,
+        "maxTickAngle": 300,
+        "maxValue": 100,
+        "minValue": 0,
+        "needleColor": "#161816",
+        "needleCrossLimitDegrees": 10,
+        "needleLengthNeg": 0,
+        "needleTickGap": 0.05,
+        "needleWidth": 5,
+        "operatorName": "last",
+        "outerEdgeColor": "semi-dark-orange",
+        "padding": 0.05,
+        "pivotColor": "semi-dark-orange",
+        "pivotRadius": 0.1,
+        "showThresholdBandLowerRange": true,
+        "showThresholdBandMiddleRange": true,
+        "showThresholdBandOnGauge": true,
+        "showThresholdBandUpperRange": true,
+        "showThresholdStateOnBackground": false,
+        "showThresholdStateOnValue": false,
+        "tickEdgeGap": 0.05,
+        "tickFont": "Inter",
+        "tickLabelColor": "#000000",
+        "tickLabelFontSize": 26,
+        "tickLengthMaj": 0.15,
+        "tickLengthMin": 0.05,
+        "tickMajorColor": "#43585f",
+        "tickMapConfig": {
+          "tickMaps": []
+        },
+        "tickMinorColor": "#000000",
+        "tickSpacingMajor": 10,
+        "tickSpacingMinor": 1,
+        "tickWidthMajor": 5,
+        "tickWidthMinor": 3,
+        "ticknessGaugeBasis": 180,
+        "unitsLabelColor": "#000000",
+        "valueFont": "Roboto Mono",
+        "valueFontSize": 48,
+        "valueYOffset": 0,
+        "zeroNeedleAngle": 40,
+        "zeroTickAngle": 60
+      },
+      "pluginVersion": "2.0.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT UNIX_TIMESTAMP(Timestamp) as time, L2 FROM db_home_automation.generic_current_integral ORDER BY time DESC LIMIT 1",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Temperature",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Phase L2",
+      "type": "briangann-gauge-panel"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 50
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 14,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "allowNeedleCrossLimits": true,
+        "animateNeedleValueTransition": true,
+        "animateNeedleValueTransitionSpeed": 100,
+        "edgeWidth": 0.05,
+        "gaugeRadius": 0,
+        "innerColor": "super-light-green",
+        "markerEndEnabled": false,
+        "markerEndShape": "arrow",
+        "markerStartEnabled": false,
+        "markerStartShape": "circle",
+        "maxNeedleAngle": 320,
+        "maxTickAngle": 300,
+        "maxValue": 100,
+        "minValue": 0,
+        "needleColor": "#161816",
+        "needleCrossLimitDegrees": 10,
+        "needleLengthNeg": 0,
+        "needleTickGap": 0.05,
+        "needleWidth": 5,
+        "operatorName": "last",
+        "outerEdgeColor": "semi-dark-orange",
+        "padding": 0.05,
+        "pivotColor": "semi-dark-orange",
+        "pivotRadius": 0.1,
+        "showThresholdBandLowerRange": true,
+        "showThresholdBandMiddleRange": true,
+        "showThresholdBandOnGauge": true,
+        "showThresholdBandUpperRange": true,
+        "showThresholdStateOnBackground": false,
+        "showThresholdStateOnValue": false,
+        "tickEdgeGap": 0.05,
+        "tickFont": "Inter",
+        "tickLabelColor": "#000000",
+        "tickLabelFontSize": 26,
+        "tickLengthMaj": 0.15,
+        "tickLengthMin": 0.05,
+        "tickMajorColor": "#43585f",
+        "tickMapConfig": {
+          "tickMaps": []
+        },
+        "tickMinorColor": "#000000",
+        "tickSpacingMajor": 10,
+        "tickSpacingMinor": 1,
+        "tickWidthMajor": 5,
+        "tickWidthMinor": 3,
+        "ticknessGaugeBasis": 180,
+        "unitsLabelColor": "#000000",
+        "valueFont": "Roboto Mono",
+        "valueFontSize": 48,
+        "valueYOffset": 0,
+        "zeroNeedleAngle": 40,
+        "zeroTickAngle": 60
+      },
+      "pluginVersion": "2.0.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT UNIX_TIMESTAMP(Timestamp) as time, L3 FROM db_home_automation.generic_current_integral ORDER BY time DESC LIMIT 1",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Temperature",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Phase L3",
+      "type": "briangann-gauge-panel"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "bdvof1bhrxd6of"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "dataset": "db_home_automation",
+          "datasource": {
+            "type": "mysql",
+            "uid": "bdvof1bhrxd6of"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  UNIX_TIMESTAMP(Timestamp) as time,\r\n  L1, L2, L3\r\nFROM generic_current_integral\r\nWHERE $__timeFilter(Timestamp)\r\nORDER BY Timestamp ASC\r\n\r\n",
+          "refId": "B",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "Humidity",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "generic_outside_conditions"
+        }
+      ],
+      "title": "Energy usage [As]",
+      "type": "timeseries"
+    }
+  ],
+  "preload": false,
+  "refresh": "",
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Electrical",
+  "uid": "df3f9f23-fa92-49b2-ad0b-6672d32bc880",
+  "version": 11,
+  "weekStart": ""
+}

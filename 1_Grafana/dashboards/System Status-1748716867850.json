@@ -1,0 +1,2540 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 4,
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    }
+  ],
+  "panels": [
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 0,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/RPi_3B_Plus.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "connections": [],
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 3",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 110,
+                "left": 18,
+                "top": 70,
+                "width": 186
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RPi - Main Unit",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 3,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/RPi_3B_Plus.png",
+                  "mode": "fixed"
+                },
+                "size": "contain"
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "size": 25,
+                "text": {
+                  "fixed": ""
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 6",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 126,
+                "left": 9,
+                "top": 57,
+                "width": 199
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RPi Living Room",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 6,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "field"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/NanoPi_NEO-no-backgrnd.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 7",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 186,
+                "left": 8,
+                "top": 25,
+                "width": 199
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/BedRoom"
+        }
+      ],
+      "title": "NanoPi Neo - Bed Room",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "dark-green",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0,
+                  "text": "broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "alive"
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "alive",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 3,
+        "x": 0,
+        "y": 7
+      },
+      "id": 6,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker/messages"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0,
+                  "text": "broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "alive"
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 3,
+        "x": 3,
+        "y": 7
+      },
+      "id": 3,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^life_bit$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/LivingRoom"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0,
+                  "text": "broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "alive"
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 3,
+        "x": 6,
+        "y": 7
+      },
+      "id": 7,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^life_bit$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/BedRoom"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 13,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "NanoPi Neo - Bed Room",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 0,
+        "y": 13
+      },
+      "id": 11,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/rp2040-zero-no-backgrnd.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 7",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 150,
+                "left": 23,
+                "top": 12,
+                "width": 137.984375
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RP2040 - Kitchen Light Switch",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "chip_temp"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 3,
+        "y": 13
+      },
+      "id": 8,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/rp2040-zero-no-backgrnd.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 7",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 155,
+                "left": 25,
+                "top": 8,
+                "width": 146.984375
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RP2040 - Living Room Light Switch",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 6,
+        "y": 13
+      },
+      "id": 10,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/rp2040-zero-no-backgrnd.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 7",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 147.984375,
+                "left": 25,
+                "top": 9,
+                "width": 140
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RP2040 - Bed Room Light Switch",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 9,
+        "y": 13
+      },
+      "id": 15,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/rp2040-zero-no-backgrnd.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 7",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 147.984375,
+                "left": 21,
+                "top": 9,
+                "width": 140
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RP2040 - Kitchen",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 12,
+        "y": 13
+      },
+      "id": 17,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/rp2040-zero-no-backgrnd.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 7",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 147.984375,
+                "left": 23,
+                "top": 9,
+                "width": 140
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RP2040 - El.Switchboard",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1
+                },
+                "to": 255
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 15,
+        "y": 13
+      },
+      "id": 19,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": true,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "light-green"
+            },
+            "image": {
+              "field": "",
+              "fixed": "",
+              "mode": "fixed"
+            },
+            "size": "tile"
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            },
+            "width": 0
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                },
+                "image": {
+                  "fixed": "img/bg/rp2040-zero-no-backgrnd.png",
+                  "mode": "fixed"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 7",
+              "oneClickMode": "off",
+              "placement": {
+                "height": 147.984375,
+                "left": 30,
+                "top": 9,
+                "width": 140
+              },
+              "type": "rectangle"
+            }
+          ],
+          "name": "Element 1724273838073",
+          "oneClickMode": "off",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "$SYS/broker"
+        }
+      ],
+      "title": "RP2040 - Bathroom",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_RPi_living_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 1"
+              ],
+              "reducer": "last"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "life_bit_PiNano_bed_room",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "temperature 2"
+              ],
+              "reducer": "last"
+            }
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "semi-dark-red",
+                  "index": 0,
+                  "text": "connection broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Alive"
+                },
+                "to": 50
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 18
+      },
+      "id": 14,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^chip_temp$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/Kitchen/LightSwitch"
+        }
+      ],
+      "title": "RP2040 - Kitchen",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "semi-dark-red",
+                  "index": 0,
+                  "text": "connection broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Alive"
+                },
+                "to": 50
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 3,
+        "y": 18
+      },
+      "id": 2,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^chip_temp$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/LivingRoom/LightSwitch"
+        }
+      ],
+      "title": "RP2040 - Living Room",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "semi-dark-red",
+                  "index": 0,
+                  "text": "connection broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Alive"
+                },
+                "to": 50
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 6,
+        "y": 18
+      },
+      "id": 9,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^chip_temp$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/BedRoom/LightSwitch"
+        }
+      ],
+      "title": "RP2040 - Bed Room Light Switch",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "semi-dark-red",
+                  "index": 0,
+                  "text": "connection broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Alive"
+                },
+                "to": 50
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 9,
+        "y": 18
+      },
+      "id": 16,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^chip_temp$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/BedRoom/LightSwitch"
+        }
+      ],
+      "title": "RP2040 - Kitchen",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "semi-dark-red",
+                  "index": 0,
+                  "text": "connection broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Alive"
+                },
+                "to": 50
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 12,
+        "y": 18
+      },
+      "id": 18,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^chip_temp$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/Electric"
+        }
+      ],
+      "title": "RP2040 - El.Switchboard",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-mqtt-datasource",
+        "uid": "ddvof7y4hpw5cc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-red",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "semi-dark-red",
+                  "index": 0,
+                  "text": "connection broken"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Alive"
+                },
+                "to": 50
+              },
+              "type": "range"
+            }
+          ],
+          "noValue": "no connection",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 15,
+        "y": 18
+      },
+      "id": 20,
+      "interval": "10s",
+      "maxDataPoints": 1000,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^chip_temp$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 25
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mqtt-datasource",
+            "uid": "ddvof7y4hpw5cc"
+          },
+          "refId": "A",
+          "topic": "HomeAutomation/Bathroom"
+        }
+      ],
+      "title": "RP2040 - Bathroom",
+      "type": "stat"
+    }
+  ],
+  "preload": false,
+  "refresh": "10s",
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "System Status",
+  "uid": "fdvofu9e988w0d",
+  "version": 139,
+  "weekStart": ""
+}
