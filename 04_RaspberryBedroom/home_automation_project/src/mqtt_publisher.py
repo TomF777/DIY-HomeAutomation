@@ -35,8 +35,8 @@ gpio.pullup(port.PC3, 0)
 # mqtt settings
 BROKER_HOST = "192.168.1.165"
 BROKER_PORT = 1883
-BROKER_USERNAME = 'mqttbroker'
-BROKER_PASSWORD = 'IoT@2023'
+BROKER_USERNAME = '***'
+BROKER_PASSWORD = '***'
 
 
 # set outputs for PMS3003P control
